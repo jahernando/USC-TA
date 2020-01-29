@@ -1,4 +1,4 @@
-name: USC-TA
+name: USC-TA3
 channels:
   - conda-forge
 dependencies:
