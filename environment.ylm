@@ -1,0 +1,9 @@
+name: pyraresearchlectures
+channels:
+  - conda-forge
+dependencies:
+  - jupyter
+  - rise
+  - numpy
+  - matplotlib
+  - scipy
