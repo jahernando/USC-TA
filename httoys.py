@@ -88,7 +88,7 @@ def poisson_control_rvs(mu, nu, tau, nbins = None):
     data = list(xms)+list(xns)
 
     zrange = (-0.5*(tau+1), 0.5*(tau+1))
-    zbins = np.linspace(-0.5*(tau+1.), 0.5*(tau+1), nbins+1)
+    zbins = np.linspace(-0.5*(tau+1.), 0.5*(tau+1), int(nbins)+1)
     ycounts, xbins, _ = plt.hist(data, zbins, histtype='step',
                                  color = 'black', alpha = 0.5);
     xcenters = 0.5*(xbins[1:] + xbins[:-1])
@@ -96,7 +96,7 @@ def poisson_control_rvs(mu, nu, tau, nbins = None):
 
     # plot pdfs
     mbins = 1000
-    zbins = np.linspace(-0.5*(tau+1.), 0.5*(tau+1), mbins)
+    zbins = np.linspace(-0.5*(tau+1.), 0.5*(tau+1), int(mbins))
     h0s  = nu*(tau+1)/(1.*nbins) * np.ones(mbins)
     h1s  = mu*(tau+1)/(1.*nbins) * np.ones(mbins)
     zsel = ((zbins >= -0.5) & (zbins < 0.5))

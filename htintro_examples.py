@@ -75,7 +75,8 @@ def dice_posterior(xi, hpriors, faces = [4, 6, 12, 24]):
     px = np.sum(pxhs)
 
     hpos = pxhs/px
-    hpos = hpos/np.sum(hpos)
+    print('!')
+    #hpos = hpos/np.sum(hpos)
     return hpos
 
 
