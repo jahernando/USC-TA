@@ -104,8 +104,8 @@ def plt_hypotest_bar(xs, h0s, h1s, x0):
 
 def prt_hypotest(xx, h0pval, h1pval, cls = None):
     print('observed data :', str(xx))
-    print('H0 p-value    :', float(h0pval));
-    print('H1 p-value    :', float(h1pval));
+    print('H0 p-value    : {:8.8f}'.format(float(h0pval)));
+    print('H1 p-value    : {:8.8f}'.format(float(h1pval)));
     if (cls is not None):
-        print('CLs           :', float(cls))
+        print('CLs           : {:8.8f} '.format(float(cls)))
     return
