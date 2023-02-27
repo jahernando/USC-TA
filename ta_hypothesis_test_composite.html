@@ -1,0 +1,988 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hypothesis testing, composite case &#8212; Statistics for Particle Physics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Confidence Intervals" href="ta_confidence_intervals.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Particle Physics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Neutrinos - USC
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_basic_concepts.html">
+   Revisiting the basic concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test.html">
+   Hypothesis testing, simple case
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Hypothesis testing, composite case
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-TA/master?urlpath=tree/docs/ta_hypothesis_test_composite.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jahernando/USC-TA/blob/master/docs/ta_hypothesis_test_composite.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-TA"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-TA/issues/new?title=Issue%20on%20page%20%2Fta_hypothesis_test_composite.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/ta_hypothesis_test_composite.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#profile-likelihood-scan">
+   1. Profile likelihood scan
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#profile-likelihood-ratio">
+     1.1 Profile likelihood ratio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-the-null-hypothesis">
+     1.2 testing the null-hypothesis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-the-alternative-hypothesis">
+     1.3 Testing the alternative hypothesis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nuissance-parameters">
+   5. Nuissance parameters
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hypothesis testing, composite case</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#profile-likelihood-scan">
+   1. Profile likelihood scan
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#profile-likelihood-ratio">
+     1.1 Profile likelihood ratio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-the-null-hypothesis">
+     1.2 testing the null-hypothesis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-the-alternative-hypothesis">
+     1.3 Testing the alternative hypothesis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nuissance-parameters">
+   5. Nuissance parameters
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="hypothesis-testing-composite-case">
+<h1>Hypothesis testing, composite case<a class="headerlink" href="#hypothesis-testing-composite-case" title="Permalink to this heading">#</a></h1>
+<p><em>Author: Jose A. Hernando</em>, January 2020</p>
+<p><em>Instituto Galego de Altas Enerxías. Universidade de Santiago de Compostela, Spain.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39; Last Execution &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Fri Feb 11 18:34:27 2022
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">optimize</span>
+
+<span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data), </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;seaborn-colorblind&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">htcore</span>     <span class="k">as</span> <span class="nn">htcore</span>
+<span class="kn">import</span> <span class="nn">httoys</span>     <span class="k">as</span> <span class="nn">httoys</span>
+<span class="kn">import</span> <span class="nn">htcatalog</span>  <span class="k">as</span> <span class="nn">htcata</span>
+<span class="kn">import</span> <span class="nn">htplot</span>     <span class="k">as</span> <span class="nn">htplot</span>
+<span class="kn">import</span> <span class="nn">htcomposite_examples</span> <span class="k">as</span> <span class="nn">htexam</span>
+
+<span class="c1"># ploting images</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>We have considered the case of an alternative <strong>single</strong> hypothesis <span class="math notranslate nohighlight">\(H_1\)</span> with respect the null hypothesis <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
+<p>But in some cases, the hypothesis depends on a parameter(s), the <strong>strength parameter, <span class="math notranslate nohighlight">\(\mu\)</span></strong>. That is <span class="math notranslate nohighlight">\(H_1(\mu)\)</span>, with <span class="math notranslate nohighlight">\(H_1(\mu = \mu_0) = H_0\)</span>. These are <strong>composite</strong> hypotheses.</p>
+<p>For example, in a search for a neutrino-less double beta decay, we do not know the half-life time. Or we search for a dark-matter candidate but we do know not its cross-section.</p>
+<p>The result of a composite hypothesis testing is now a confidence interval on the <span class="math notranslate nohighlight">\(\mu\)</span> parameter.</p>
+<p>FC provides the method to compute the CI, but it sometimes requires large computation simulations.</p>
+<p>In some cases the Wilk’s theorem allow us to treat the problem without the massive simulations.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="profile-likelihood-scan">
+<h2>1. Profile likelihood scan<a class="headerlink" href="#profile-likelihood-scan" title="Permalink to this heading">#</a></h2>
+<p>Let’s consider a simple example. The null hypothesis a gaussian with <span class="math notranslate nohighlight">\(\mu_0=0\)</span> and sigma unity. And the alternative is a gaussian with <span class="math notranslate nohighlight">\(\mu\)</span> positive and sigma one.</p>
+<p>If <span class="math notranslate nohighlight">\(\mu = 3\)</span> half of the observations will indicate an observation at Z=3.</p>
+<p>If <span class="math notranslate nohighlight">\(\mu=5\)</span> half of the observation will imply discovery or Z=5.</p>
+<p>In the other hand, if <span class="math notranslate nohighlight">\(\mu_{true} = 0\)</span> we can set an upper limit on <span class="math notranslate nohighlight">\(\mu\)</span> at 90% CL at 1.28 Z for. This is the maximum value of <span class="math notranslate nohighlight">\(\mu\)</span> which gaussian penetrates in the negative region 10%.</p>
+<p><strong>Explore</strong> the <span class="math notranslate nohighlight">\(\mu\)</span> separation between both gaussian. Modify also <span class="math notranslate nohighlight">\(\sigma\)</span> of the gaussian.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="mf">3.</span>
+<span class="n">httoys</span><span class="o">.</span><span class="n">gaussian</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma1</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [-1.0341462]
+H0 p-value    : 0.84946609
+H1 p-value    : 0.00002740
+CLs           : 0.00018202 
+</pre></div>
+</div>
+<img alt="_images/ta_hypothesis_test_composite_7_1.png" src="_images/ta_hypothesis_test_composite_7_1.png" />
+</div>
+</div>
+<p>The main question is:</p>
+<p><strong>How extreme</strong> a data <span class="math notranslate nohighlight">\(x\)</span> is respect a given hypothesis <span class="math notranslate nohighlight">\(\mu\)</span>?</p>
+<p>FC have already quatified that answer. We need to compute the distance:</p>
+<div class="math notranslate nohighlight">
+\[
+t_\mu( x) = -2 \ln \, \frac{ \mathcal{L}( x \, | \mu)}{ \mathcal{L}( x \, | \, \hat{\mu}( x))}
+\]</div>
+<p>Low values, close to zero, of <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> indicates “good” data.</p>
+<p>Large values of <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> indicate extreme data.</p>
+<p>Note that <span class="math notranslate nohighlight">\(\hat{\mu}(x)\)</span> is the best-estimate of <span class="math notranslate nohighlight">\(\mu\)</span> given a data <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Usually  <span class="math notranslate nohighlight">\(\hat{\mu}(x)\)</span> is the value of <span class="math notranslate nohighlight">\(\mu\)</span> that maximizes the likelihood <span class="math notranslate nohighlight">\(\mathcal{L}(x | \mu)\)</span>, that is the MLE (Maximum Likelihood Estimate).</p>
+<p>FC relates the likelihood of a data <span class="math notranslate nohighlight">\(x\)</span> with respect an hypotesis <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\mathcal{L} (x |\mu)\)</span>, with the likelihood,<span class="math notranslate nohighlight">\(\mathcal{L}(x |\hat{\mu}(x))\)</span> , with respect the best-estimate <span class="math notranslate nohighlight">\(\hat{\mu}(x)\)</span> obtained with <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>The pdf, <span class="math notranslate nohighlight">\(g(t_\mu | \mu)\)</span>, where <span class="math notranslate nohighlight">\(\mu\)</span> is the true value, will allow us to quantifie the <span class="math notranslate nohighlight">\(1-\beta\)</span> (i.e 10%) more extreme events, the “worse” events.</p>
+<p>For that, we need to compute that pdf, <span class="math notranslate nohighlight">\(g(t_\mu | \mu)\)</span>, by default it implies to simulate large number of data and generate the distribution of <span class="math notranslate nohighlight">\(t_\mu\)</span>.</p>
+<p>In certain cases, “when we are in the gaussian domain”, the <span class="math notranslate nohighlight">\(t_\mu\)</span> has the nice property that its pdf, <span class="math notranslate nohighlight">\(g(t_\mu | \mu)\)</span>, is a <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution with n degree-of-freedom (n is the dimension of <span class="math notranslate nohighlight">\(\mu)\)</span>.</p>
+<p>This is a consequence of the <strong>Wilk’s theoreme</strong>.</p>
+<p>Usually if the likelihood is regular enough and the estimates are gaussian distributed the Wilk’s conditions are fulfilled.</p>
+<p>Note: We use this property in <em>regresion</em>, when we obtain errors of <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> with the MLE!</p>
+<p>We define the errors as at the value where the delta likelihood scan has increased in 1/2 unit respect the minimun of the likelihood!</p>
+<p>Let’s consider a simple example that fulfills the Wilk’s theoreme: a gaussian distribution.</p>
+<p><strong>Example</strong>: Consider a gaussian distribution with unknown positive mean <span class="math notranslate nohighlight">\(\mu\)</span> and sigma one, while the null hypothesis is <span class="math notranslate nohighlight">\(\mu_0 = 0\)</span> and sigma one. Verify that <span class="math notranslate nohighlight">\(t_\mu\)</span> is distributed with a <span class="math notranslate nohighlight">\(\chi^2(1)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">size</span>  <span class="o">=</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">1000</span>
+<span class="n">par</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">rv</span>        <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span>
+<span class="n">xs</span>        <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">ht</span>        <span class="o">=</span> <span class="n">htcore</span><span class="o">.</span><span class="n">htcomposite</span><span class="p">(</span><span class="n">rv</span><span class="p">,</span> <span class="n">par</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">)</span>
+<span class="n">muhats</span>    <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">ht</span><span class="o">.</span><span class="n">mubest</span><span class="p">(</span><span class="n">xi</span><span class="p">))</span>  <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
+<span class="n">tmus</span>      <span class="o">=</span> <span class="p">[</span><span class="n">ht</span><span class="o">.</span><span class="n">tmu</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>        <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean muhat : &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">muhats</span><span class="p">),</span> <span class="s1">&#39;, std&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">muhats</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">muhats</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\hat{\mu}$&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean muhat :  2.0015597656250006 , std 1.0102648972676513
+</pre></div>
+</div>
+<img alt="_images/ta_hypothesis_test_composite_14_1.png" src="_images/ta_hypothesis_test_composite_14_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">htplot</span><span class="o">.</span><span class="n">chi2_test</span><span class="p">(</span><span class="n">tmus</span><span class="p">,</span> <span class="n">nbins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$t_\mu$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chi2  1.02063611304276
+p-value mean : 0.5130582365684075 ; std * sqrt(12.) : 0.9968037509944598
+</pre></div>
+</div>
+<img alt="_images/ta_hypothesis_test_composite_15_1.png" src="_images/ta_hypothesis_test_composite_15_1.png" />
+</div>
+</div>
+<p><strong>Exercise</strong>: Consider the case of a poisson distribution with a unknown mean <span class="math notranslate nohighlight">\(\mu\)</span> and the null hypothesis <span class="math notranslate nohighlight">\(\mu_0\)</span>. Check for what values of <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(g(t_\mu | \mu)\)</span> follows a <span class="math notranslate nohighlight">\(\chi^2(1)\)</span> distribution.</p>
+<p><strong>Exercise</strong>: Consider the case of an experiment that get a sample of n-size poisson disbruted values, <span class="math notranslate nohighlight">\(x\)</span>, with a unknown mean <span class="math notranslate nohighlight">\(\mu\)</span>. Check the values of <span class="math notranslate nohighlight">\(n\)</span> for whose <span class="math notranslate nohighlight">\(g(t_\mu | \mu)\)</span> follows a <span class="math notranslate nohighlight">\(\chi^2(1)\)</span> distribution.</p>
+<div class="section" id="profile-likelihood-ratio">
+<h3>1.1 Profile likelihood ratio<a class="headerlink" href="#profile-likelihood-ratio" title="Permalink to this heading">#</a></h3>
+<p>We are back to the construct a CI of <span class="math notranslate nohighlight">\(\mu\)</span> at <span class="math notranslate nohighlight">\(\beta\)</span> CL given data <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<p>In the “gaussian” regime, we can profit from the simple relation between <span class="math notranslate nohighlight">\(t_\mu(x_0)\)</span> and its p-value, <span class="math notranslate nohighlight">\(p_\mu\)</span>, via the <span class="math notranslate nohighlight">\(\chi^2(1)\)</span> distribution:</p>
+<div class="math notranslate nohighlight">
+\[
+p_\mu = 2 \, (1 - \Phi(\sqrt{t_\mu(x_0)}))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\Phi(x)\)</span> is the cumulative function of a normal gaussian.</p>
+<p>We can now:</p>
+<ul class="simple">
+<li><p>define a CI of <span class="math notranslate nohighlight">\(\mu\)</span> at <span class="math notranslate nohighlight">\(\beta\)</span> CL, for those values wich <span class="math notranslate nohighlight">\(p_\mu &gt;= 1-\beta\)</span>.</p></li>
+<li><p>clain observation (discovery) of <span class="math notranslate nohighlight">\(H_1(\mu_0)\)</span> when <span class="math notranslate nohighlight">\(p_0\)</span> has a Z-value <span class="math notranslate nohighlight">\(\ge 3\)</span> (5).</p></li>
+</ul>
+<p><strong>Example</strong>: Consider a gaussian distribution with fix sigma and unknown <span class="math notranslate nohighlight">\(\mu\)</span>, and the null hypothesis is <span class="math notranslate nohighlight">\(\mu_0\)</span>. Generate an observation data, <span class="math notranslate nohighlight">\(x_0\)</span>, and compute the CI of <span class="math notranslate nohighlight">\(\mu\)</span> at <span class="math notranslate nohighlight">\(\beta\)</span> CL using the <span class="math notranslate nohighlight">\(t_\mu(x_0)\)</span> variable. Consider <span class="math notranslate nohighlight">\(\mu=3\)</span> and <span class="math notranslate nohighlight">\(\beta = 0.68\)</span>.</p>
+<p><strong>Explore</strong>: Change the size of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">2</span>
+<span class="n">par</span><span class="p">,</span> <span class="n">mask</span>       <span class="o">=</span> <span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">rv</span>              <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span>
+<span class="n">ht</span>              <span class="o">=</span> <span class="n">htcore</span><span class="o">.</span><span class="n">htcomposite</span><span class="p">(</span><span class="n">rv</span><span class="p">,</span> <span class="n">par</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">)</span>
+<span class="n">x0</span>      <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="o">*</span><span class="n">par</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">parbest</span> <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">parbest</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;observed data &#39;</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="s1">&#39;, best par &#39;</span><span class="p">,</span> <span class="n">parbest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data  [3.57242656 3.27784801] , best par  [3.4251709 1.       ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">nmus</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">0.68</span>
+<span class="n">mus</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">nmus</span><span class="p">)</span>
+<span class="n">tmus</span>  <span class="o">=</span> <span class="p">[</span><span class="n">ht</span>    <span class="o">.</span><span class="n">tmu</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">mui</span><span class="p">,</span> <span class="n">parbest</span> <span class="o">=</span> <span class="n">parbest</span><span class="p">)</span> <span class="k">for</span> <span class="n">mui</span>  <span class="ow">in</span> <span class="n">mus</span><span class="p">]</span>
+<span class="n">ptmus</span> <span class="o">=</span> <span class="p">[</span><span class="n">htcore</span><span class="o">.</span><span class="n">tmu_pvalue</span><span class="p">(</span><span class="n">tmui</span><span class="p">)</span>                <span class="k">for</span> <span class="n">tmui</span> <span class="ow">in</span> <span class="n">tmus</span><span class="p">]</span>
+<span class="n">ci</span>     <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">tmu_cint</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">beta</span><span class="p">)</span>
+ 
+<span class="n">htplot</span><span class="o">.</span><span class="n">prt_wilks_pvalues</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">ci_central</span> <span class="o">=</span> <span class="n">ci</span><span class="p">)</span>
+<span class="n">htplot</span><span class="o">.</span><span class="n">plt_wilks_pvalues</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">mus</span><span class="p">,</span> <span class="n">ptmus</span> <span class="o">=</span> <span class="n">ptmus</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [2.72194937 4.1283252 ] at  68 % CL
+</pre></div>
+</div>
+<img alt="_images/ta_hypothesis_test_composite_21_1.png" src="_images/ta_hypothesis_test_composite_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="testing-the-null-hypothesis">
+<h3>1.2 testing the null-hypothesis<a class="headerlink" href="#testing-the-null-hypothesis" title="Permalink to this heading">#</a></h3>
+<p>In same cases the strength parameter <span class="math notranslate nohighlight">\(\mu \ge \mu_0\)</span>, therefore the values of <span class="math notranslate nohighlight">\(\hat{\mu}(x) \lt \mu_0\)</span> do not challenge <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
+<p>If we define:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda(\mu) = \frac{\mathcal{L}(x | \mu)}{\mathcal{L}(x | \hat{\mu}(x))}
+\]</div>
+<p>To check the compatibility with <span class="math notranslate nohighlight">\(\mu_0\)</span>, we can use:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+q_0 = \left\{ \begin{array}{ll}  
+-2 \ln \lambda(\mu_0) &amp; \mbox{if $\hat{\mu}(x) &gt; \mu_0$} \\
+0 &amp; \mbox{if $\hat{\mu}(x) \le \mu_0$}
+\end{array} \right. 
+\end{split}\]</div>
+<p>Now the pdf, <span class="math notranslate nohighlight">\(g(q_0 \, | \mu_0)\)</span>, will be now a “half” <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution.</p>
+<p>In this case there is even a simple relation with the <span class="math notranslate nohighlight">\(p\)</span>-value of <span class="math notranslate nohighlight">\(H_0\)</span>, the <em>goodness-of-fit</em> of <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+p_0 = 1-\Phi(\sqrt{q_0})
+\]</div>
+<p>That translates directly into number of sigmas, <span class="math notranslate nohighlight">\(Z\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+Z = \sqrt{q_0}
+\]</div>
+<p><strong>Example</strong>: In the case of a gaussian hypothesis with mean <span class="math notranslate nohighlight">\(\mu\)</span> positive and sigma one, and the null hypothesis <span class="math notranslate nohighlight">\(\mu_0 = 0\)</span>. Generate an observation data for the case <span class="math notranslate nohighlight">\(\mu_{true} = 3\)</span> and compute the <span class="math notranslate nohighlight">\(p\)</span>-value and <span class="math notranslate nohighlight">\(Z\)</span>-value of <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu0</span><span class="p">,</span> <span class="n">mutrue</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">par</span><span class="p">,</span> <span class="n">mask</span>               <span class="o">=</span> <span class="p">(</span><span class="n">mutrue</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">x0</span>    <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="o">*</span><span class="n">par</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">ht</span>    <span class="o">=</span> <span class="n">htcore</span><span class="o">.</span><span class="n">htcomposite</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">,</span> <span class="n">par</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">)</span>
+
+<span class="n">parbest</span> <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">parbest</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+<span class="n">q0</span>      <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">q0</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">mu0</span><span class="p">)</span>
+<span class="n">p0</span>      <span class="o">=</span> <span class="n">htcore</span><span class="o">.</span><span class="n">q0_pvalue</span><span class="p">(</span><span class="n">q0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x0 &#39;</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="s1">&#39;parhat &#39;</span><span class="p">,</span> <span class="n">parbest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;q0 &#39;</span><span class="p">,</span> <span class="n">q0</span><span class="p">,</span> <span class="s1">&#39;p-value&#39;</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="s1">&#39;Z-value&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">q0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0  [2.40251017] parhat  [2.40249023 1.        ]
+q0  5.77205509427897 p-value 0.008141490999044487 Z-value 2.40251016528109
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong> Verify that the <span class="math notranslate nohighlight">\(q_0\)</span> distribution is a ‘half’-<span class="math notranslate nohighlight">\(\chi^2\)</span>.</p>
+</div>
+<div class="section" id="testing-the-alternative-hypothesis">
+<h3>1.3 Testing the alternative hypothesis<a class="headerlink" href="#testing-the-alternative-hypothesis" title="Permalink to this heading">#</a></h3>
+<p>To set a <strong>upper</strong> limit on the value of <span class="math notranslate nohighlight">\(\mu\)</span>, the <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> above <span class="math notranslate nohighlight">\(\mu\)</span> do not challege the alternative hypothesis.</p>
+<p>With:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda(\mu) = \frac{\mathcal{L}(x | \mu)}{\mathcal{L}(x | \hat{\mu}(x))}
+\]</div>
+<p>We can now construct:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+q_\mu = \left\{ \begin{array}{ll} 
+-2 \ln \lambda(\mu) &amp; \mbox{if $\hat{\mu}(x) \le \mu$} \\
+0 &amp; \mbox{if $\hat{\mu}(x) \gt \mu$}
+\end{array} \right.
+\end{split}\]</div>
+<p>Again the pdf, <span class="math notranslate nohighlight">\(g(q_\mu | \mu)\)</span>  is a “half” <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution.</p>
+<p>And computing p-value of the <span class="math notranslate nohighlight">\(H_1(\mu)\)</span> hypothesis is very simple:</p>
+<div class="math notranslate nohighlight">
+\[
+p_\mu = 1 - \Phi(\sqrt{q_\mu})
+\]</div>
+<p>This <span class="math notranslate nohighlight">\(p_\mu\)</span>-value allow us to compute the upper limit on <span class="math notranslate nohighlight">\(\mu\)</span> at a given <span class="math notranslate nohighlight">\(\beta\)</span> CL.</p>
+<p><strong>Example</strong> Consider a gaussian distributed with mean <span class="math notranslate nohighlight">\(\mu_0 = 0\)</span> and sigma 1. Generate an experiment, compute <span class="math notranslate nohighlight">\(q_\mu\)</span> for <span class="math notranslate nohighlight">\(\mu = 3\)</span>. Set the upper limit on <span class="math notranslate nohighlight">\(\mu\)</span> at 90% CL.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">mutrue</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.90</span>
+<span class="n">par</span><span class="p">,</span> <span class="n">mask</span>                 <span class="o">=</span> <span class="p">(</span><span class="n">mutrue</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">ht</span>  <span class="o">=</span> <span class="n">htcore</span><span class="o">.</span><span class="n">htcomposite</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">,</span> <span class="n">par</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">)</span>
+     
+<span class="n">x0</span>      <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="o">*</span><span class="n">par</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">parbest</span> <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">parbest</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+<span class="n">qmu</span>     <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">qmu</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>
+<span class="n">pqmu</span>    <span class="o">=</span> <span class="n">htcore</span><span class="o">.</span><span class="n">qmu_pvalue</span><span class="p">(</span><span class="n">qmu</span><span class="p">)</span>
+<span class="n">muup</span>    <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">qmu_ulim</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x0  &#39;</span><span class="p">,</span> <span class="n">x0</span> <span class="p">,</span> <span class="s1">&#39;parbest &#39;</span><span class="p">,</span> <span class="n">parbest</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;qmu &#39;</span><span class="p">,</span> <span class="n">qmu</span><span class="p">,</span> <span class="s1">&#39;p-value &#39;</span><span class="p">,</span> <span class="n">pqmu</span><span class="p">,</span> <span class="s1">&#39; at mu &#39;</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>
+<span class="n">htplot</span><span class="o">.</span><span class="n">prt_wilks_pvalues</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">ci_upper</span> <span class="o">=</span> <span class="n">muup</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0   [0.17375982] parbest  [0.17375 1.     ]
+qmu  7.9876335444270055 p-value  0.0023548967647081254  at mu  3.0
+upper limit : [1.45531139] at  90 % CL
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">nmus</span> <span class="o">=</span> <span class="o">-</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">mus</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">nmus</span><span class="p">)</span>
+<span class="n">qmus</span>   <span class="o">=</span> <span class="p">[</span><span class="n">ht</span>    <span class="o">.</span><span class="n">qmu</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span>  <span class="n">mui</span><span class="p">,</span> <span class="n">parbest</span> <span class="o">=</span> <span class="n">parbest</span><span class="p">)</span> <span class="k">for</span> <span class="n">mui</span> <span class="ow">in</span> <span class="n">mus</span><span class="p">]</span>
+<span class="n">pqmus</span>  <span class="o">=</span> <span class="p">[</span><span class="n">htcore</span><span class="o">.</span><span class="n">qmu_pvalue</span><span class="p">(</span><span class="n">qmui</span><span class="p">)</span>                 <span class="k">for</span> <span class="n">qmui</span> <span class="ow">in</span> <span class="n">qmus</span><span class="p">]</span>
+<span class="n">htplot</span><span class="o">.</span><span class="n">plt_wilks_pvalues</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">mus</span><span class="p">,</span> <span class="n">pqmus</span> <span class="o">=</span> <span class="n">pqmus</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ta_hypothesis_test_composite_31_0.png" src="_images/ta_hypothesis_test_composite_31_0.png" />
+</div>
+</div>
+<p><strong>Exercise</strong>: Consider an experiment with a gaussian distribution with mean <span class="math notranslate nohighlight">\(\mu\)</span> and sigma 1. Consider <span class="math notranslate nohighlight">\(\mu_{true} = \mu_0 = 0\)</span>. Obtain the distribution of the upper limits at 90 %CL.</p>
+<p><strong>Exercise</strong> Consider a experiment with a <span class="math notranslate nohighlight">\(n\)</span> sample of gaussian distributed values with <span class="math notranslate nohighlight">\(\mu\)</span> and sigma 1. Consider <span class="math notranslate nohighlight">\(\mu_{true} = \mu = 3.5\)</span>, verify that <span class="math notranslate nohighlight">\(q_\mu\)</span> follows a half-<span class="math notranslate nohighlight">\(\chi^2\)</span> distribution with one dof.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="nuissance-parameters">
+<h2>5. Nuissance parameters<a class="headerlink" href="#nuissance-parameters" title="Permalink to this heading">#</a></h2>
+<p>Consider a counting experiment with a control region that is <span class="math notranslate nohighlight">\(\tau\)</span> times larger than the signal region. In both regions the expected background events is <span class="math notranslate nohighlight">\(\nu\)</span>, while in the signal region <span class="math notranslate nohighlight">\(\nu + \mu\)</span>.</p>
+<p><strong>Explore</strong> in the following toy the generation of some events, with different values of <span class="math notranslate nohighlight">\(\nu\)</span>, <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p>We are interested on measuring <span class="math notranslate nohighlight">\(\mu\)</span> and estimating <span class="math notranslate nohighlight">\(\nu\)</span> from the control sample. <span class="math notranslate nohighlight">\(\nu\)</span> is a nuisance parameter, how we can treat it?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">tau</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span>
+<span class="n">httoys</span><span class="o">.</span><span class="n">poisson_control_rvs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">tau</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bkg events : 39 signal events : 6
+</pre></div>
+</div>
+<img alt="_images/ta_hypothesis_test_composite_36_1.png" src="_images/ta_hypothesis_test_composite_36_1.png" />
+</div>
+</div>
+<p>We can extend the likelihood to estimate the nuisance parameter, <span class="math notranslate nohighlight">\(\nu\)</span>, and use:</p>
+<div class="math notranslate nohighlight">
+\[
+t_\mu = -2 \ln \frac{\mathcal{L}(x \, | \mu, \, \hat{\nu}(\mu, x))}{ \mathcal{L}(x \, | \, \hat{\mu}(x), \hat{\nu} (x))}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{\nu}(x)\)</span> is the best estimate given <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(\hat{\nu}(\mu, x)\)</span> is the best estimate when fixing <span class="math notranslate nohighlight">\(\mu\)</span> and given <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>And use the test statistics <span class="math notranslate nohighlight">\(q_0\)</span> and <span class="math notranslate nohighlight">\(q_\mu\)</span> to test the null and the composite hypothesis and set a CI for <span class="math notranslate nohighlight">\(\mu\)</span> using <span class="math notranslate nohighlight">\(t_\mu\)</span>.</p>
+<p><strong>Example:</strong> Consider an experiment that search for a signal <span class="math notranslate nohighlight">\(\nu+\mu\)</span>. The background, <span class="math notranslate nohighlight">\(\nu\)</span>, is measured in a independent region, called <em>control</em> region, where there is no signal, and an expected background <span class="math notranslate nohighlight">\(\tau \nu\)</span>, where <span class="math notranslate nohighlight">\(\tau\)</span> is known. Consider <span class="math notranslate nohighlight">\(\nu\)</span> as the nuisance parameter. The experiment observes <span class="math notranslate nohighlight">\(k\)</span> events in the control and signal region. Consider an experiment with <span class="math notranslate nohighlight">\(k=4\)</span>, <span class="math notranslate nohighlight">\(\tau = 40\)</span>, <span class="math notranslate nohighlight">\(\nu = 2\)</span> and <span class="math notranslate nohighlight">\(\mu = 10\)</span>. What is the range of <span class="math notranslate nohighlight">\(\mu\)</span> excluded at 90 %CL. Compute <span class="math notranslate nohighlight">\(q_0\)</span>, is there a discovery, and observation?</p>
+<p>This is a prototype of a search. The pdf is:</p>
+<div class="math notranslate nohighlight">
+\[
+g(n, \, m \, | \, \mu, \, \nu) = \frac{(\nu+\mu )^m \, e^{-(\nu + \mu)}}{m!} \, \frac{(\tau \nu)^n \, e^{-\tau \nu}}{n!}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(m\)</span> are the events in the signal region and <span class="math notranslate nohighlight">\(n\)</span> are the events in the control region.</p>
+<p><strong>Exercise</strong>: First, we check that the pdf, <span class="math notranslate nohighlight">\(g( t_\mu | \mu, \nu)\)</span> is a <span class="math notranslate nohighlight">\(\chi^2(2)\)</span> with two dof, and <span class="math notranslate nohighlight">\(g(t_\mu | \mu, \hat{\nu}(\mu))\)</span> a <span class="math notranslate nohighlight">\(\chi^2(1)\)</span> with one dof.</p>
+<p><strong>Example</strong>: Generate an observed data, <span class="math notranslate nohighlight">\(x_0\)</span>, for an experiment with a control and a signal region. The control region follows a poisson with <span class="math notranslate nohighlight">\(\tau \nu\)</span>, and the signal <span class="math notranslate nohighlight">\(\nu + \mu\)</span>. Consider the case <span class="math notranslate nohighlight">\(\tau = 20\)</span>, <span class="math notranslate nohighlight">\(\nu = 2\)</span> and <span class="math notranslate nohighlight">\(\mu = 6\)</span>.</p>
+<p>Compute:</p>
+<p>a) The p-value with the null hypothesis <span class="math notranslate nohighlight">\(\mu=0\)</span>.</p>
+<p>b) The lower value of the upper CI at 90% using <span class="math notranslate nohighlight">\(q_\mu\)</span></p>
+<p>c) the central CI at 90% CL using <span class="math notranslate nohighlight">\(t_\mu\)</span></p>
+<p>Generate an experiment, <span class="math notranslate nohighlight">\(x_0\)</span>, compute <span class="math notranslate nohighlight">\(\hat{\mu}(x_0), \, \hat{\nu}(x_0)\)</span>, and <span class="math notranslate nohighlight">\(\hat{\nu}(\mu, x_0)\)</span> for fix <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">tau</span> <span class="o">=</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">20.</span>
+<span class="n">par</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">masknu</span>  <span class="o">=</span> <span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">tau</span><span class="p">),</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># generate an observation and obtain the best-estimate of mu, nu and nu given mu</span>
+<span class="n">rv</span>      <span class="o">=</span> <span class="n">htcata</span><span class="o">.</span><span class="n">poisson_control_signal</span>
+<span class="n">x0</span>      <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="o">*</span><span class="n">par</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ht</span>      <span class="o">=</span> <span class="n">htcore</span><span class="o">.</span><span class="n">htcomposite</span><span class="p">(</span><span class="n">rv</span><span class="p">,</span> <span class="n">par</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">,</span> <span class="n">masknu</span> <span class="o">=</span> <span class="n">masknu</span><span class="p">)</span> 
+<span class="n">parbest</span> <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">parbest</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+<span class="n">nubest</span>  <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">parmubest</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mu, nu true   :&#39;</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;events in control, signal region :&#39;</span><span class="p">,</span> <span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x0</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;events in control region/tau     :&#39;</span><span class="p">,</span> <span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">tau</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;par best :&#39;</span><span class="p">,</span> <span class="n">parbest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;par best :&#39;</span><span class="p">,</span> <span class="n">nubest</span><span class="p">,</span> <span class="s1">&#39; fix mu at &#39;</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu, nu true   : 6.0 2.0
+events in control, signal region : 37.0 5.0
+events in control region/tau     : 1.85
+par best : [ 3.14996555  1.85000468 20.        ]
+par best : [ 6.          1.81728516 20.        ]  fix mu at  6.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compute <span class="math notranslate nohighlight">\(t_\mu(x_0)\)</span>, <span class="math notranslate nohighlight">\(q_0(x_0)\)</span> and <span class="math notranslate nohighlight">\(q_\mu(x_0)\)</span> as a function of <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">nmus</span> <span class="o">=</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">mus</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">nmus</span><span class="p">)</span>
+<span class="n">q0</span>     <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">q0</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="n">tmus</span>   <span class="o">=</span> <span class="p">[</span><span class="n">ht</span><span class="o">.</span><span class="n">tmu</span>      <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">mi</span><span class="p">,</span> <span class="n">parbest</span> <span class="o">=</span> <span class="n">parbest</span><span class="p">)</span> <span class="k">for</span> <span class="n">mi</span> <span class="ow">in</span> <span class="n">mus</span><span class="p">]</span>
+<span class="n">qmus</span>   <span class="o">=</span> <span class="p">[</span><span class="n">ht</span><span class="o">.</span><span class="n">qmu</span>      <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">mi</span><span class="p">,</span> <span class="n">parbest</span> <span class="o">=</span> <span class="n">parbest</span><span class="p">)</span> <span class="k">for</span> <span class="n">mi</span> <span class="ow">in</span> <span class="n">mus</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">tmus</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$t_\mu$&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">qmus</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$q_\mu$&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ta_hypothesis_test_composite_46_0.png" src="_images/ta_hypothesis_test_composite_46_0.png" />
+</div>
+</div>
+<p>Compute p-values for <span class="math notranslate nohighlight">\(q_0(x_0)\)</span>, <span class="math notranslate nohighlight">\(t_\mu(x_0)\)</span> and <span class="math notranslate nohighlight">\(q_\mu(x_0)\)</span> as set a upper limit and a CI.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute the CI using tmu, and upper limit using qmu</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">0.90</span>
+<span class="n">pts</span> <span class="o">=</span> <span class="p">[</span><span class="n">htcore</span><span class="o">.</span><span class="n">tmu_pvalue</span><span class="p">(</span><span class="n">tmu</span><span class="p">)</span> <span class="k">for</span> <span class="n">tmu</span> <span class="ow">in</span> <span class="n">tmus</span><span class="p">]</span>
+<span class="n">pqs</span> <span class="o">=</span> <span class="p">[</span><span class="n">htcore</span><span class="o">.</span><span class="n">qmu_pvalue</span><span class="p">(</span><span class="n">qmu</span><span class="p">)</span> <span class="k">for</span> <span class="n">qmu</span> <span class="ow">in</span> <span class="n">qmus</span><span class="p">]</span>
+<span class="n">ci_upper</span>   <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">qmu_ulim</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">beta</span><span class="p">,</span> <span class="n">parbest</span> <span class="o">=</span> <span class="n">parbest</span><span class="p">);</span>
+<span class="n">ci_central</span> <span class="o">=</span> <span class="n">ht</span><span class="o">.</span><span class="n">tmu_cint</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">beta</span><span class="p">,</span> <span class="n">parbest</span> <span class="o">=</span> <span class="n">parbest</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H0 p-value &#39;</span><span class="p">,</span> <span class="n">htcore</span><span class="o">.</span><span class="n">q0_pvalue</span><span class="p">(</span><span class="n">q0</span><span class="p">),</span> <span class="s1">&#39;Z-value &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">q0</span><span class="p">))</span>
+<span class="n">htplot</span><span class="o">.</span><span class="n">prt_wilks_pvalues</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">ci_central</span><span class="p">,</span> <span class="n">ci_upper</span><span class="p">)</span>
+<span class="n">htplot</span><span class="o">.</span><span class="n">plt_wilks_pvalues</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">mus</span><span class="p">,</span> <span class="n">pts</span><span class="p">,</span> <span class="n">pqs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H0 p-value  0.03272191027354576 Z-value  1.8422142246679785
+upper limit : [6.60588413] at  90 % CL
+central CI  : [0.25116516 7.80185687] at  90 % CL
+</pre></div>
+</div>
+<img alt="_images/ta_hypothesis_test_composite_49_1.png" src="_images/ta_hypothesis_test_composite_49_1.png" />
+</div>
+</div>
+<p><strong>Example</strong>: Generate now <span class="math notranslate nohighlight">\(m\)</span> experiments, and obtain the <span class="math notranslate nohighlight">\(\hat{\mu}, \hat{\nu}\)</span> distributions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">size</span>  <span class="o">=</span> <span class="mf">12.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="mi">1000</span>
+<span class="n">htexam</span><span class="o">.</span><span class="n">poisson_control_muhat_hist</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ta_hypothesis_test_composite_51_0.png" src="_images/ta_hypothesis_test_composite_51_0.png" />
+</div>
+</div>
+<p><strong>Example</strong> In the following plot we show the p-value of the an observed data <span class="math notranslate nohighlight">\(x_0\)</span> in the plane <span class="math notranslate nohighlight">\((\mu, \nu)\)</span>. They are computed assuming that <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> follows a <span class="math notranslate nohighlight">\(\chi^2\)</span> pdf with 2 dof. The * in the plot is best-estimate point, <span class="math notranslate nohighlight">\((\hat{\mu}(x_0), \hat{\nu}(x_0))\)</span>, and the line the best nuisance parameter <span class="math notranslate nohighlight">\(\hat{\nu}(\mu, x_0)\)</span> as a funcion of <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">tau</span> <span class="o">=</span> <span class="mf">12.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">10.</span>
+<span class="n">htexam</span><span class="o">.</span><span class="n">poisson_control_ci</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">tau</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data     : (48.0, 14.0)
+best par : [9.20001667 4.80000312]
+central CI : [ 3.76409659 16.36610927]
+</pre></div>
+</div>
+<img alt="_images/ta_hypothesis_test_composite_53_1.png" src="_images/ta_hypothesis_test_composite_53_1.png" />
+</div>
+</div>
+<p>Notice that at p-value 0.1 corresponde the CI region of 90% CL and the proyection onto the <span class="math notranslate nohighlight">\(\mu\)</span> axis in the 90% CL for the <span class="math notranslate nohighlight">\(\mu\)</span> parameter when <span class="math notranslate nohighlight">\(\nu\)</span> is considered a nuisance.</p>
+<hr class="docutils" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ta_confidence_intervals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Confidence Intervals</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By José Ángel Hernando Morata<br/>
+  
+      &copy; Copyright USC - J.A. Hernando - 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

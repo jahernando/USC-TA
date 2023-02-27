@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysis Techniques - Statistical Methods - Index &#8212; Statistics for Particle Physics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Particle Physics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Neutrinos - USC
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_basic_concepts.html">
+   Revisiting the basic concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test.html">
+   Hypothesis testing, simple case
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test_composite.html">
+   Hypothesis testing, composite case
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-TA/master?urlpath=tree/docs/ta_index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jahernando/USC-TA/blob/master/docs/ta_index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-TA"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-TA/issues/new?title=Issue%20on%20page%20%2Fta_index.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/ta_index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#universidade-de-santiago">
+   Universidade de Santiago
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-these-lectures">
+   Introduction to these lectures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#index">
+   Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliography">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Analysis Techniques - Statistical Methods - Index</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#universidade-de-santiago">
+   Universidade de Santiago
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-these-lectures">
+   Introduction to these lectures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#index">
+   Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliography">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="analysis-techniques-statistical-methods-index">
+<h1>Analysis Techniques - Statistical Methods - Index<a class="headerlink" href="#analysis-techniques-statistical-methods-index" title="Permalink to this heading">#</a></h1>
+<div class="section" id="universidade-de-santiago">
+<h2>Universidade de Santiago<a class="headerlink" href="#universidade-de-santiago" title="Permalink to this heading">#</a></h2>
+<p>Jose A. Hernando</p>
+<p><em>Departamento de Física de Partículas. Universidade de Santiago de Compostela</em></p>
+<p>Enero 2020</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Last version &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last version  Mon Feb 27 16:24:45 2023
+</pre></div>
+</div>
+</div>
+</div>
+<p>**About **</p>
+<p>These lectures are about statistical method for rare event searches in Particle Physics using Python.</p>
+<p>They cover Hypothesis Testing and Confidence Intervals. They are based on the excellent lectures on statistics by Prosper (<a class="reference external" href="https://indico.cern.ch/event/358542">lectures</a>, <a class="reference external" href="https://arxiv.org/pdf/1504.00945.pdf">pdf</a>), Cowan (<a class="reference external" href="http://indico.cern.ch/event/173726/">lectures</a>) and Cramer (<a class="reference external" href="https://indico.cern.ch/event/48425/">lectures</a>) given at CERN Academic Training.</p>
+<p>We will use the Python scientic toolkits, Matplotlib, Numpy, Scipy, that are distributed with Anaconda Python.</p>
+<p>A disclaimer: <em>I am neither a statistician nor a programmer!</em></p>
+</div>
+<div class="section" id="introduction-to-these-lectures">
+<h2>Introduction to these lectures<a class="headerlink" href="#introduction-to-these-lectures" title="Permalink to this heading">#</a></h2>
+<p>Sometimes, we do an experiment to discover a new particle.</p>
+<p>If the particle exits in Nature we maybe find only few events. This is a <strong>rare search</strong>.</p>
+<p>Rare events usually follow poissonian distributions. But Statistics are nicely and friendly in the “Gaussian domain”.</p>
+<p>If we ‘observe’ some rare events, then:</p>
+<p>When we could clain an <strong>observation</strong> or a <strong>discovery</strong> of the new particle?</p>
+<p>And if not, what is the <strong>limit</strong> in a given observable (i.e. the half lifetime) we could impose?</p>
+<p>In fact, <em>what does it mean discovery, observation, a limit, a confidence interval?</em></p>
+<p>And, <em>how do we compute them from data?</em></p>
+<p>These are the question we try to answer in these lectures.</p>
+<p>We will discovery that we need to cover three issues:</p>
+<ul class="simple">
+<li><p>Hypothesis Testing</p></li>
+<li><p>Confidence Interval</p></li>
+<li><p>Regression</p></li>
+</ul>
+<p>They seem different but they are not!</p>
+<p>We start with <strong>simple hypothesis</strong>, <span class="math notranslate nohighlight">\(H_1\)</span> (i.e BSM) to be confronted with the current accepted hypothesis, <span class="math notranslate nohighlight">\(H_0\)</span>, (called null, i.e SM).</p>
+<p>Soon we realize that in general the alternative hypothesis depends on a <strong>strength parameter</strong> <span class="math notranslate nohighlight">\(\mu\)</span>, that is, <span class="math notranslate nohighlight">\(H_1(\mu)\)</span>. For example the half-lifetime of <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> decay. This is called <strong>composite hypothesis</strong>.</p>
+<p>And then we are back to estimate the region of the parameter <span class="math notranslate nohighlight">\(\mu\)</span> “compatible” with data, <span class="math notranslate nohighlight">\(x\)</span>, in other words, to define some <strong>confidence interval</strong>, which in most cases implies to estimate the parameter, <span class="math notranslate nohighlight">\(\hat{\mu}\)</span>, that is <strong>regression</strong>.</p>
+<p>The starting point is a bifurcation: either we follow a <strong>Bayes</strong> or a <strong>Frequentist</strong> path.</p>
+<p>Be a Bayesian usually implies do <strong>integration</strong> (sometime complicated integrals!).</p>
+<p>Be a frequentist implies usually either do regression (fits!) or do <strong>simulations</strong>.
+But thanks to the current computer power, we can play the <strong>frequentist game</strong>!</p>
+<p>In this lectures we will use Python (in fact, scipy, numpy and mathplotlib) for our (mostly) frequentist journey!</p>
+<p>But let’s start with refreshing some basic ideas about probability density functions, likelihoods and posterior probabilities.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="index">
+<h2>Index<a class="headerlink" href="#index" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="ta_basic_concepts.html"><span class="doc std std-doc">Basic concepts</span></a></p></li>
+<li><p><a class="reference internal" href="ta_hypothesis_test.html"><span class="doc std std-doc">Simple hypothesis testings</span></a></p></li>
+<li><p><a class="reference internal" href="ta_confidence_intervals.html"><span class="doc std std-doc">Confidence Intervals</span></a></p></li>
+<li><p><a class="reference internal" href="ta_hypothesis_test_composite.html"><span class="doc std std-doc">Composite hypothesis testing</span></a></p></li>
+<li><p><a class="reference internal" href="ta_hypothesis_test_composite_example.html"><span class="doc std std-doc">An example of composite hypothesis testing</span></a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="bibliography">
+<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this heading">#</a></h2>
+<p>[1] “Practical Statistic for LHC physicist,” H. B. Prosper, CERN Academic Training Lectures (2015). <a class="reference external" href="https://indico.cern.ch/event/358542/">https://indico.cern.ch/event/358542/</a> <a class="reference external" href="https://arxiv.org/pdf/1504.00945.pdf">https://arxiv.org/pdf/1504.00945.pdf</a></p>
+<p>[2] “Statistic for HEP,” G. Cowan. CERN Academic Training Lectures (2012). <a class="reference external" href="http://indico.cern.ch/event/173726/">http://indico.cern.ch/event/173726/</a></p>
+<p>[3] “Statistics for Particle Physics,” K. Cranmer, CERN Academic Training Lectures (2009).
+<a class="reference external" href="https://indico.cern.ch/event/48425/">https://indico.cern.ch/event/48425/</a></p>
+<p>[4] “Unified approach to the classical statistical analysis of small signals, “G. J. Feldman and R. D. Cousins, Phys. Rev. D57 (1998) 3873. <a class="reference external" href="http://journals.aps.org/prd/abstract/10.1103/PhysRevD.57.3873">http://journals.aps.org/prd/abstract/10.1103/PhysRevD.57.3873</a></p>
+<p>[5] “Asymptotic formulae for likelihood-based tests of new physics,” Glen Cowan, Kyle Cranmer, Eilam Gross, Ofer Vitells. Eur. Phys. J. C71 1554 (2011). <a class="reference external" href="https://arxiv.org/abs/1007.1727">https://arxiv.org/abs/1007.1727</a></p>
+<p>[6] “Incorporating systematic uncertainties into an upper limit,” R.D. Cousins and V.L. Highland. Nucl. Instrum. Meth. A320, 331 (1992). <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/0168900292907945">http://www.sciencedirect.com/science/article/pii/0168900292907945</a></p>
+<p>[7] “Confidence Level Computation for Combining Searches with Small Statistics,” T. Junk, Nucl. Instrum. Meth. A434, 435 (1999). <a class="reference external" href="https://arxiv.org/abs/hep-ex/9902006">https://arxiv.org/abs/hep-ex/9902006</a></p>
+<p>[8] “How good are your fits? Unbinned multivariate goodness-of-fit tests in high energy physics,” M. Willians, <a class="reference external" href="https://arxiv.org/abs/1006.3019">https://arxiv.org/abs/1006.3019</a></p>
+<p>[9] ROOT <a class="reference external" href="https://root.cern.ch">https://root.cern.ch</a>, TMVA <a class="reference external" href="http://tmva.sourceforge.net">http://tmva.sourceforge.net</a>, RooFit <a class="reference external" href="https://root.cern.ch/roofit">https://root.cern.ch/roofit</a></p>
+<p>[10] Anaconda <a class="reference external" href="https://anaconda.org">https://anaconda.org</a>, SciPy <a class="reference external" href="https://www.scipy.org">https://www.scipy.org</a>, NumPy <a class="reference external" href="http://www.numpy.org">http://www.numpy.org</a>, Scikit-learn <a class="reference external" href="http://scikit-learn.org/stable/">http://scikit-learn.org/stable/</a>, Matplotlib <a class="reference external" href="http://matplotlib.org">http://matplotlib.org</a></p>
+<p>[11] “Lectures on Statistics in Theory: Prelude to Statistics in Practice” B. Cousins, <a class="reference external" href="https://arxiv.org/abs/1807.05996">https://arxiv.org/abs/1807.05996</a></p>
+<p>[12] “Statistics for physics”. D. Tonelli. Invisible School 2019, Canfranc.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By José Ángel Hernando Morata<br/>
+  
+      &copy; Copyright USC - J.A. Hernando - 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

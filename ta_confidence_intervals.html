@@ -1,0 +1,1217 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confidence Intervals &#8212; Statistics for Particle Physics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hypothesis testing, composite case" href="ta_hypothesis_test_composite.html" />
+    <link rel="prev" title="Hypothesis testing, simple case" href="ta_hypothesis_test.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Particle Physics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Statistics for Particle Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_basic_concepts.html">
+   Revisiting the basic concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test.html">
+   Hypothesis testing, simple case
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test_composite.html">
+   Hypothesis testing, composite case
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-TA/master?urlpath=tree/docs/ta_confidence_intervals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jahernando/USC-TA/blob/master/docs/ta_confidence_intervals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-TA"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-TA/issues/new?title=Issue%20on%20page%20%2Fta_confidence_intervals.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/ta_confidence_intervals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frequestist-vs-bayesians">
+   1. Frequestist vs Bayesians
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classical-frequentist-ci">
+   2. Classical frequentist CI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feldman-cousins-fc-ci">
+   3. Feldman-Cousins (FC) CI
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fc-confidence-intervals-in-n-dimensions">
+     FC confidence intervals in n-dimensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian-credible-intervals">
+   4. Bayesian Credible Intervals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-low-stats-poisson">
+     Example: low stats poisson
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Confidence Intervals</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frequestist-vs-bayesians">
+   1. Frequestist vs Bayesians
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classical-frequentist-ci">
+   2. Classical frequentist CI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feldman-cousins-fc-ci">
+   3. Feldman-Cousins (FC) CI
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fc-confidence-intervals-in-n-dimensions">
+     FC confidence intervals in n-dimensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian-credible-intervals">
+   4. Bayesian Credible Intervals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-low-stats-poisson">
+     Example: low stats poisson
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="confidence-intervals">
+<h1>Confidence Intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this heading">#</a></h1>
+<p><em>Author: Jose A. Hernando</em>, February 2020</p>
+<p><em>Instituto Galego de Altas Enerxías. Universidade de Santiago de Compostela, Spain.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39; Last Execution &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Mon Feb 27 16:49:02 2023
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+
+<span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data), </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;seaborn-colorblind&#39;</span><span class="p">)</span> 
+
+<span class="kn">import</span> <span class="nn">htcore</span> <span class="k">as</span> <span class="nn">htcore</span>
+<span class="kn">import</span> <span class="nn">httoys</span> <span class="k">as</span> <span class="nn">httoys</span>
+<span class="kn">import</span> <span class="nn">htcint</span> <span class="k">as</span> <span class="nn">htcint</span>
+<span class="kn">import</span> <span class="nn">htcint_examples</span> <span class="k">as</span> <span class="nn">htexam</span>
+
+<span class="c1"># ploting images</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Usually we indicate that a given parameters <span class="math notranslate nohighlight">\(\mu\)</span> (i.e lifetime) has an upper limit at 90 % CL  (i.e. <span class="math notranslate nohighlight">\(1.07 \times 10^{26}\)</span> y at 90 %CL, of KamLAND-Zen).</p>
+<p>Sometimes we quote an interval for the parameter <span class="math notranslate nohighlight">\(\mu\)</span> as a <strong>confidence interval</strong> (CI) with a <strong>confidence level</strong> (CL) range.</p>
+<p>But what does it mean?</p>
+<p>It means a very different thing for a frequentist and a bayesian!</p>
+<p>And… how are they computed?</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="frequestist-vs-bayesians">
+<h2>1. Frequestist vs Bayesians<a class="headerlink" href="#frequestist-vs-bayesians" title="Permalink to this heading">#</a></h2>
+<p>Again…</p>
+<p>Frequentist talk about experiments in the same conditions. Bayesians talk about probabilities based on a prior knowledge or a ‘reasonable’ guess.</p>
+<p><strong>Frequentist</strong> say a CI <strong>covers</strong> the true value at a given <span class="math notranslate nohighlight">\(\beta\)</span> CL. That means that if you repeat a large number of times, <span class="math notranslate nohighlight">\(m\)</span>, an experiment at for each one you set a CI <span class="math notranslate nohighlight">\(\{\)</span>CI<span class="math notranslate nohighlight">\(_i, \, i=1, \dots, m \}\)</span>, at least a fraction <span class="math notranslate nohighlight">\(\beta\)</span> of the CIs cover the true value.</p>
+<p>A frequentist needs to provide a method to <strong>construct the CI</strong>. The method has to have the correct <strong>coverage</strong>.</p>
+<p><strong>Bayesians</strong> talk about <strong>credible intervals</strong> (CI), that is the probability that the true parameter is inside the CI is greather or equal to a <span class="math notranslate nohighlight">\(\beta\)</span> probability.</p>
+<p>That sounds most like what you want, but unfortunately to get it, you need to do accept some assumptions or some ‘reasonable’ priors.</p>
+<p>For a frequentist a CI indicates the limit in wich a data <span class="math notranslate nohighlight">\(x\)</span>  is consider at <em>extreme</em> event ad a given <span class="math notranslate nohighlight">\(\beta\)</span> CL.</p>
+<p>But to indicate is <span class="math notranslate nohighlight">\(x\)</span> is an <em>extreme</em> event, we need to <strong>order</strong> the events given <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="classical-frequentist-ci">
+<h2>2. Classical frequentist CI<a class="headerlink" href="#classical-frequentist-ci" title="Permalink to this heading">#</a></h2>
+<p>Given <span class="math notranslate nohighlight">\(x\)</span> data that is related with a unknown parameter <span class="math notranslate nohighlight">\(\mu\)</span> via a pdf, <span class="math notranslate nohighlight">\(g(x | \mu)\)</span>, (i.e x is poisson distributed with mean <span class="math notranslate nohighlight">\(\mu\)</span>) How we can provide a frequentist CI for <span class="math notranslate nohighlight">\(\mu\)</span> given <span class="math notranslate nohighlight">\(x\)</span>?</p>
+<p>Classical CI are obtained using the <strong>Neyman construction</strong>.</p>
+<p>Later we will discuss the <strong>Feldman-Cousins construction</strong></p>
+<p>The Neyman construction defines a <strong>confidence belt</strong> in the plane <span class="math notranslate nohighlight">\((x, \mu)\)</span>.</p>
+<p>First, for a given <span class="math notranslate nohighlight">\(\mu\)</span>  and the pdf, <span class="math notranslate nohighlight">\(g(x | \mu)\)</span>, we define an interval <span class="math notranslate nohighlight">\([x_l(\mu), x_u(\mu)]\)</span> where inside there are contained at least <span class="math notranslate nohighlight">\(\beta\)</span> of possible <span class="math notranslate nohighlight">\(x\)</span> values. We will describe later how this interval is constructed.</p>
+<p>The union of the intervals <span class="math notranslate nohighlight">\([x_l(\mu), x_u(\mu)]\)</span> as a function of <span class="math notranslate nohighlight">\(\mu\)</span> define a confidence region, a belt; in the plane <span class="math notranslate nohighlight">\((x \mu)\)</span>.</p>
+<p>There are three different ways to define the interval <span class="math notranslate nohighlight">\([x_l(\mu), x_u(\mu)]\)</span> for given <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p><strong>Lower, central and upper limit intervals</strong>.</p>
+<p>The lower interval:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-\infty}^{x_l(\mu)} g(x | \mu) \, \mathrm{d} x \le 1-\beta
+\]</div>
+<p>For the upper:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{x_u(\mu)}^{\infty} g(x | \mu) \, \mathrm{d} x \le 1-\beta
+\]</div>
+<p>And the central:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{x_l(\mu)}^{\infty} g(x | \mu) \, \mathrm{d}x, \;  \int_{-\infty}^{x_u(\mu)} g(x | \mu) \, \mathrm{d}x \le (1-\beta)/2 
+\]</div>
+<p>Notice that frequestist are <strong>conservative</strong> and <span class="math notranslate nohighlight">\(\beta\)</span> CL implies at least <span class="math notranslate nohighlight">\(\beta\)</span> CL.</p>
+<p>In the next cells we compute the central, lower and upper interval for a give value of <span class="math notranslate nohighlight">\(b = 3\)</span> and <span class="math notranslate nohighlight">\(\mu = 0.5\)</span> of a poisson distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.5</span>
+<span class="n">beta</span>  <span class="o">=</span> <span class="mf">0.90</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span> <span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span>
+<span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+<span class="n">i0</span>     <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">alpha</span>  <span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">))</span>
+<span class="n">i1</span>     <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">i1</span><span class="p">],</span> <span class="n">ps</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">i1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">&#39;//&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;central CL&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;b + s = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; + &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">mu</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;interval (&#39;</span><span class="p">,</span> <span class="n">i0</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">i1</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;coverage &#39;</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ps</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">i1</span><span class="p">]),</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interval ( 1 , 7 )
+coverage  94.30636944863619 %
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_13_1.png" src="_images/ta_confidence_intervals_13_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.5</span>
+<span class="n">beta</span>  <span class="o">=</span> <span class="mf">0.68</span>
+<span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">)</span>
+<span class="n">i0</span>     <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">beta</span>  <span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span>     <span class="p">,</span> <span class="n">ps</span>     <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">&#39;//&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span><span class="p">[:</span><span class="n">i0</span><span class="p">],</span> <span class="n">ps</span><span class="p">[:</span><span class="n">i0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span> <span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;upper&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;b + s = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; + &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">mu</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;interval ( - ,&#39;</span><span class="p">,</span> <span class="n">i0</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;coverage &#39;</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ps</span><span class="p">[:</span><span class="n">i0</span><span class="p">]),</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interval ( - , 4 )
+coverage  72.54449533096047 %
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_14_1.png" src="_images/ta_confidence_intervals_14_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.5</span>
+<span class="n">beta</span>  <span class="o">=</span> <span class="mf">0.68</span>
+<span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">)</span>
+<span class="n">i0</span>     <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta</span>  <span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">))</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span>     <span class="p">,</span> <span class="n">ps</span>     <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">&#39;//&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="n">i0</span><span class="p">:],</span> <span class="n">ps</span><span class="p">[</span><span class="n">i0</span><span class="p">:],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span> <span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;lower&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;b + s = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; + &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">mu</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;interval (&#39;</span><span class="p">,</span> <span class="n">i0</span> <span class="p">,</span> <span class="s1">&#39; , - )&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;coverage &#39;</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ps</span><span class="p">[</span><span class="n">i0</span><span class="p">:]),</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interval ( 2  , - )
+coverage  86.38227823796366 %
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_15_1.png" src="_images/ta_confidence_intervals_15_1.png" />
+</div>
+</div>
+<p><strong>Exercise</strong>: Consider a poisson distribution with <span class="math notranslate nohighlight">\(b=3\)</span> background events and a value of possible signal, <span class="math notranslate nohighlight">\(\mu=0.5\)</span>. Give the 90% lower, upper and central interval.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plt_rmu_classical</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.90</span><span class="p">):</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">rmu</span><span class="p">,</span> <span class="n">xs</span> <span class="o">=</span> <span class="n">htcint</span><span class="o">.</span><span class="n">rmu</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;classical&#39;</span><span class="p">,</span> <span class="n">full_output</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rmu segment for b &#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;and mu &#39;</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="s1">&#39; = &#39;</span><span class="p">,</span> <span class="n">rmu</span><span class="p">);</span>
+    <span class="n">cps</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">ns</span> <span class="o">=</span> <span class="p">[</span><span class="n">xi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="p">[</span><span class="n">xi</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="p">[</span><span class="n">xi</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span> <span class="p">(</span><span class="n">ns</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span>  <span class="n">ps</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;g(x| b + $\mu$)&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ns</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">cps</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span>  
+             <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;cdf(x| b + $\mu$)&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span>  <span class="n">alpha</span><span class="p">,</span>   <span class="n">alpha</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;b = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;, $\mu$ = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">mu</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.68</span>
+<span class="n">plt_rmu_classical</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rmu segment for b  3.0 and mu  0.5  =  (2, 5)
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_18_1.png" src="_images/ta_confidence_intervals_18_1.png" />
+</div>
+</div>
+<p>We define the <strong>confidence belt</strong> scaning along the <span class="math notranslate nohighlight">\(\mu\)</span> values and for each one, konwing the pdf <span class="math notranslate nohighlight">\(g(x \ \mu)\)</span>, computing the interval <span class="math notranslate nohighlight">\([x_l(\mu), x_u(\mu)]\)</span> that provides a <span class="math notranslate nohighlight">\(\beta\)</span> % contaiment.</p>
+<a class="reference internal image-reference" href="_images/CI_belt.png"><img alt="_images/CI_belt.png" src="_images/CI_belt.png" style="width: 500px;" /></a>
+<p>In the case we measure <span class="math notranslate nohighlight">\(x_0 = 3.2\)</span>, the CI is given by the values of <span class="math notranslate nohighlight">\(\mu\)</span> where the vertical line <span class="math notranslate nohighlight">\(x_0 = 3.2\)</span> meets the boundaries of the confidence belt.</p>
+<p><strong>Example</strong>: Construct the <em>confident belt</em> CI at 90% and 68% CL considering a counting experiment with background <span class="math notranslate nohighlight">\(b\)</span> and unknown signal <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p>In the case the pdf is a poisson with mean <span class="math notranslate nohighlight">\(b + \mu\)</span>. We scan along <span class="math notranslate nohighlight">\(\mu\)</span> and for each <span class="math notranslate nohighlight">\(\mu\)</span> we obtain the interval <span class="math notranslate nohighlight">\([x_l(\mu), x_u(\mu)]\)</span> using the central interval at 90% contaiment.</p>
+<p>The we unify the border of the segments and we define the confident belt.</p>
+<p><em>Inspect the code in the following cells</em></p>
+<p><strong>Exercise</strong>: What is the CI at 90% CL? And for <span class="math notranslate nohighlight">\(b=3\)</span> and <span class="math notranslate nohighlight">\(x_0 = 1\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plt_confbelt</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta1</span> <span class="o">=</span> <span class="mf">0.90</span><span class="p">,</span> <span class="n">beta2</span> <span class="o">=</span> <span class="mf">0.68</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;classical&#39;</span><span class="p">,</span>
+                 <span class="n">mumax</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">musize</span><span class="o">=</span><span class="mi">200</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; draws the CI confident belt for beta1 and beta2 CL of type = (&#39;classical&#39;, &#39;fc&#39;)</span>
+<span class="sd">        draws a line in the confident belt plane for x0 and print the ci for beta1 and beta2</span>
+<span class="sd">        beta1 = 90 %CL and beta2 = 68% CL</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">mumax</span><span class="p">,</span> <span class="n">musize</span><span class="p">)</span>
+    <span class="n">xls</span><span class="p">,</span> <span class="n">xus</span><span class="p">,</span> <span class="n">ci1</span> <span class="o">=</span> <span class="n">htcint</span><span class="o">.</span><span class="n">ci_belt</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta1</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">xls</span><span class="p">,</span> <span class="n">xus</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> 
+                      <span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">beta1</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;% CL&#39;</span><span class="p">);</span>
+    <span class="n">xls</span><span class="p">,</span> <span class="n">xus</span><span class="p">,</span> <span class="n">ci2</span> <span class="o">=</span> <span class="n">htcint</span><span class="o">.</span><span class="n">ci_belt</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta2</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">xls</span><span class="p">,</span> <span class="n">xus</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> 
+                      <span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">beta2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;% CL&#39;</span> <span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x0</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="p">,</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mumax</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$\mu$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="nb">type</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CI &#39;</span><span class="p">,</span> <span class="n">ci1</span><span class="p">(</span><span class="n">x0</span><span class="p">),</span> <span class="s1">&#39; at &#39;</span><span class="p">,</span> <span class="n">beta1</span><span class="p">,</span> <span class="s1">&#39;CL for b = &#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39; and x0 = &#39;</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CI &#39;</span><span class="p">,</span> <span class="n">ci2</span><span class="p">(</span><span class="n">x0</span><span class="p">),</span> <span class="s1">&#39; at &#39;</span><span class="p">,</span> <span class="n">beta2</span><span class="p">,</span> <span class="s1">&#39;CL for b = &#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39; and x0 = &#39;</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ci1</span><span class="p">,</span> <span class="n">ci2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span>
+<span class="n">plt_confbelt</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;classical&#39;</span><span class="p">,</span> <span class="n">mumax</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">musize</span> <span class="o">=</span> <span class="mi">200</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CI  (0.0, 1.6884422110552764)  at  0.9 CL for b =  3  and x0 =  1
+CI  (0.0, 0.24120603015075376)  at  0.68 CL for b =  3  and x0 =  1
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_22_1.png" src="_images/ta_confidence_intervals_22_1.png" />
+</div>
+</div>
+<p><strong>[E] Exercise</strong>: Test the coverange of the CI at 90 % CL in the previous example. Consider <span class="math notranslate nohighlight">\(b=2\)</span> and <span class="math notranslate nohighlight">\(\mu_{true} = 2\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="feldman-cousins-fc-ci">
+<h2>3. Feldman-Cousins (FC) CI<a class="headerlink" href="#feldman-cousins-fc-ci" title="Permalink to this heading">#</a></h2>
+<p>Feldman and Cousins, when working on 90’s on the NOMAD experiment, found several worrisome issues with classical CIs.</p>
+<p>And they proposed an ordering principle to compute the extreme of a data, <span class="math notranslate nohighlight">\(x\)</span>, with respect <span class="math notranslate nohighlight">\(\mu\)</span> based on the likelihood ratio.</p>
+<p>This ordering principle avoid the decision of lower, central and upper intervals. It passes smoothly from one to another.</p>
+<p>Now is the common method used to define CI. It is the new-classical.</p>
+<p>Historically, <a class="reference external" href="https://arxiv.org/abs/physics/9711021">Feldman and Cousins</a> encountered:</p>
+<p>First, one have the temptation of quoting a <strong>flip-flop</strong> result: if we do not observe a signal, we quote a 90% CL, if we get an observation, we quote a 90% central CI.  Your present your result depending on your data.</p>
+<p>In this example, data, <span class="math notranslate nohighlight">\(x\)</span>, follows a normal gaussian. At 3 Z, the confidence belt pass from 90 % CL upper limit to 90% CL central limit. The belt has not the proper frequentist coverage.</p>
+<a class="reference internal image-reference" href="_images/CI_FC_flipflop.png"><img alt="_images/CI_FC_flipflop.png" src="_images/CI_FC_flipflop.png" style="width: 400px;" /></a>
+<p>We should decide what type of quote before obtaining the measurement.</p>
+<p>Second, <strong>there is no CI at 90% CL for the case <span class="math notranslate nohighlight">\(b=3\)</span> and <span class="math notranslate nohighlight">\(x_0= 0\)</span></strong>. (See the previos example) Imagine that NOMAD expecting 3 background events, see no signal, and have no result to quote!</p>
+<p>They propose a construction interval method (<strong>Feldman-Cousins</strong> method) that smoothly passes from lower to central intervals and avoid the problem of the no CI observed at <span class="math notranslate nohighlight">\(b=3, x_0 = 0\)</span>.</p>
+<p><strong>Exercise</strong>: Verify that the flip-flop problem has not the proper coverage</p>
+<p><strong>Question</strong>: Why the case <span class="math notranslate nohighlight">\(b=3\)</span> and <span class="math notranslate nohighlight">\(x_0 = 0\)</span> has no classical CI at 90% CL?</p>
+<p>FC proposed an <strong>ordering rule</strong>, a variable that quantifies <strong>how extreme</strong> data <span class="math notranslate nohighlight">\(x\)</span> is respect <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p>The variable is the likelihood ratio with respect the best-estimate <span class="math notranslate nohighlight">\(\hat{\mu}(x)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+t_\mu(x) =  \frac{\mathcal{L}( x | \mu)}{ \mathcal{L}(x | \hat{\mu}(x))}
+\]</div>
+<p>The best-estimate <span class="math notranslate nohighlight">\(\hat{\mu}(x)\)</span> is the value of <span class="math notranslate nohighlight">\(\mu\)</span> that maximizes the likelihood <span class="math notranslate nohighlight">\(\mathcal{L}(x| \hat{\mu}(x))\)</span> for a given measurement <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>The values of <span class="math notranslate nohighlight">\(t_\mu\)</span>(x) are between <span class="math notranslate nohighlight">\([0, 1]\)</span>.</p>
+<p>The <span class="math notranslate nohighlight">\(x\)</span> measurements with <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> values approaching 1 are “likely” measurements respect <span class="math notranslate nohighlight">\(\mu\)</span> and those wich values close to 0 are “unlikely”.</p>
+<p>The lower <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> value the most extreme a <span class="math notranslate nohighlight">\(x\)</span> measurement is.</p>
+<p>For example for a given <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(x\)</span>, if the best estimate <span class="math notranslate nohighlight">\(\hat{\mu}(x)\)</span> is close to <span class="math notranslate nohighlight">\(\mu\)</span>, both likelihoods are similar and the ratio, <span class="math notranslate nohighlight">\(t_\mu(x)\)</span>, close to 1.</p>
+<p>Nevertheless a given <span class="math notranslate nohighlight">\(x\)</span> may have a small likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}(x | \mu)\)</span>, but the maximum likelihood for that <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\mathcal{L}(x | \hat{\mu}(x))\)</span> may also be small, then <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> is close to 1, and <span class="math notranslate nohighlight">\(x\)</span> can gain priority respect other <span class="math notranslate nohighlight">\(x\)</span>’s values for the same <span class="math notranslate nohighlight">\(\mu\)</span>. That is the situatio for the case <span class="math notranslate nohighlight">\(x = 0\)</span> for <span class="math notranslate nohighlight">\(b = 3\)</span> and <span class="math notranslate nohighlight">\(\mu = 0\)</span>. The problematic case discussed above.</p>
+<p><strong>Example</strong>: Consider the case of <span class="math notranslate nohighlight">\(b=3\)</span> and <span class="math notranslate nohighlight">\(\mu = 0.5\)</span> and constract the FC segment, <span class="math notranslate nohighlight">\([x_l(\mu), x_u(\mu)]\)</span> along <span class="math notranslate nohighlight">\(x\)</span> at 90% CL.</p>
+<p>For each <span class="math notranslate nohighlight">\(n\)</span>, that has probability <span class="math notranslate nohighlight">\(g(n | b + \mu)\)</span>, with <span class="math notranslate nohighlight">\(b=3, \, \mu = 0.5\)</span>, we estimate <span class="math notranslate nohighlight">\(\hat{\mu}(n)\)</span>.</p>
+<p>The best estimate <span class="math notranslate nohighlight">\(\hat{\mu}(n)\)</span> is <span class="math notranslate nohighlight">\(n-b\)</span>. Except for <span class="math notranslate nohighlight">\(x \le 3\)</span>, that it is <span class="math notranslate nohighlight">\(0\)</span>, as there is no physical meaning of a negative signal.</p>
+<p>For each <span class="math notranslate nohighlight">\(n\)</span> we compute the likelihood ratio <span class="math notranslate nohighlight">\(t_\mu(n)\)</span>.</p>
+<p>In this case:</p>
+<div class="math notranslate nohighlight">
+\[
+t_\mu(n) = \frac{g(n | b + \mu)}{ g( n | b + \hat{\mu}(n))}
+\]</div>
+<p>Then we order the <span class="math notranslate nohighlight">\(n\)</span> accordingly with <span class="math notranslate nohighlight">\(t_\mu(n)\)</span> from highest to lowest (in this case).</p>
+<p>Each value <span class="math notranslate nohighlight">\(n\)</span>, has a probability <span class="math notranslate nohighlight">\(g(n | b + \mu)\)</span>.</p>
+<p>We accept <span class="math notranslate nohighlight">\(n\)</span> values in the CI in <span class="math notranslate nohighlight">\(t_\mu\)</span> order and considering its probability <span class="math notranslate nohighlight">\(g(n | b + \mu)\)</span> till we reach or surpass 90% probability.</p>
+<p><em>Inspect the code in the next cells</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">,</span> <span class="n">mu</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span>
+<span class="n">ns</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">muhats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ni</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">ni</span> <span class="ow">in</span> <span class="n">ns</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">tmu</span><span class="p">(</span><span class="n">ni</span><span class="p">,</span> <span class="n">muhat</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">mu</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ni</span><span class="p">,</span>  <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">)</span> <span class="o">/</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ni</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">muhat</span><span class="p">)</span>
+<span class="n">gmus</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span> <span class="n">ni</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">)</span> <span class="k">for</span> <span class="n">ni</span> <span class="ow">in</span> <span class="n">ns</span><span class="p">])</span>
+<span class="n">gmuhats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span> <span class="n">ni</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">muh</span><span class="p">)</span> <span class="k">for</span> <span class="n">ni</span><span class="p">,</span> <span class="n">muh</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">muhats</span><span class="p">)])</span>
+<span class="n">tmus</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">tmu</span><span class="p">(</span><span class="n">ni</span><span class="p">,</span> <span class="n">muhati</span><span class="p">)</span> <span class="k">for</span> <span class="n">ni</span><span class="p">,</span> <span class="n">muhati</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">muhats</span><span class="p">)])</span> 
+<span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n (x)&#39;</span> <span class="p">:</span> <span class="n">ns</span><span class="p">,</span>  <span class="s1">&#39;g(n| b+ mu)&#39;</span><span class="p">:</span> <span class="n">gmus</span><span class="p">,</span> <span class="s1">&#39;muhat(x)&#39;</span> <span class="p">:</span> <span class="n">muhats</span><span class="p">,</span> 
+       <span class="s1">&#39;g(n | b + muhat)&#39;</span> <span class="p">:</span> <span class="n">gmuhats</span><span class="p">,</span>  <span class="s1">&#39;tmu(n)&#39;</span><span class="p">:</span> <span class="n">tmus</span><span class="p">,</span> <span class="s1">&#39;qmu &#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmus</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next table shows the values of <span class="math notranslate nohighlight">\(g(n | b+ \mu), \, \hat{\mu}(x), \, g(n | b + \hat{\mu}(n)), \, t_\mu(x), -2 \mathrm{ln}(t_\mu(x))\)</span> for the possible measurements <span class="math notranslate nohighlight">\(n\)</span> in a single counting experiment with <span class="math notranslate nohighlight">\(b = 3\)</span> and <span class="math notranslate nohighlight">\(\mu = 0.5\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>n (x)</th>
+      <th>g(n| b+ mu)</th>
+      <th>muhat(x)</th>
+      <th>g(n | b + muhat)</th>
+      <th>tmu(n)</th>
+      <th>qmu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.030197</td>
+      <td>0</td>
+      <td>0.049787</td>
+      <td>0.606531</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0.105691</td>
+      <td>0</td>
+      <td>0.149361</td>
+      <td>0.707619</td>
+      <td>0.691699</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.184959</td>
+      <td>0</td>
+      <td>0.224042</td>
+      <td>0.825556</td>
+      <td>0.383397</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.215785</td>
+      <td>0</td>
+      <td>0.224042</td>
+      <td>0.963148</td>
+      <td>0.075096</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.188812</td>
+      <td>1</td>
+      <td>0.195367</td>
+      <td>0.966450</td>
+      <td>0.068251</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>0.132169</td>
+      <td>2</td>
+      <td>0.175467</td>
+      <td>0.753237</td>
+      <td>0.566749</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>0.077098</td>
+      <td>3</td>
+      <td>0.160623</td>
+      <td>0.479995</td>
+      <td>1.467958</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>0.038549</td>
+      <td>4</td>
+      <td>0.149003</td>
+      <td>0.258714</td>
+      <td>2.704061</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>0.016865</td>
+      <td>5</td>
+      <td>0.139587</td>
+      <td>0.120823</td>
+      <td>4.226857</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>0.006559</td>
+      <td>6</td>
+      <td>0.131756</td>
+      <td>0.049779</td>
+      <td>6.000309</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>0.002296</td>
+      <td>7</td>
+      <td>0.125110</td>
+      <td>0.018348</td>
+      <td>7.996442</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>0.000730</td>
+      <td>8</td>
+      <td>0.119378</td>
+      <td>0.006118</td>
+      <td>10.192911</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In the next cell we plot <span class="math notranslate nohighlight">\(g(n | b + s)\)</span> and <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> for n-values given <span class="math notranslate nohighlight">\(b = 3\)</span> and <span class="math notranslate nohighlight">\(\mu = 0.5\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">gmus</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$g(x | b + \mu)$&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">tmus</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$t_\mu(x)$&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ta_confidence_intervals_38_0.png" src="_images/ta_confidence_intervals_38_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plt_rmu_fc</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">):</span>
+    <span class="n">rmu</span><span class="p">,</span> <span class="n">xs</span> <span class="o">=</span> <span class="n">htcint</span><span class="o">.</span><span class="n">rmu</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;fc&#39;</span><span class="p">,</span> <span class="n">full_output</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rmu segment for b &#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;and mu &#39;</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="s1">&#39; = &#39;</span><span class="p">,</span> <span class="n">rmu</span><span class="p">);</span>
+    <span class="n">tms</span><span class="p">,</span> <span class="n">cps</span><span class="p">,</span> <span class="n">ns</span> <span class="o">=</span> <span class="p">[</span><span class="n">xi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="p">[</span><span class="n">xi</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="p">[</span><span class="n">xi</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
+    <span class="c1">#tms = [-2*np.log(tmi) for tmi in tms]</span>
+    <span class="n">ps</span> <span class="o">=</span> <span class="p">[</span><span class="n">cps</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">ps</span> <span class="o">+</span> <span class="p">[</span><span class="n">cps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">cps</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ns</span><span class="p">))]</span>
+    <span class="n">ks</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ns</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">axb</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span> <span class="p">(</span><span class="n">ks</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span>  <span class="n">ps</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$g(x | b + \mu)$&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ks</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">cps</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span>  
+             <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;cdf(x| b + $\mu$)&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+    <span class="n">axb</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ks</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">tms</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$t_{\mu}(x)$&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">beta</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;probabilty&#39;</span><span class="p">);</span> <span class="n">axb</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t_\mu$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">ks</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">ns</span><span class="p">[:</span><span class="mi">15</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;b = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;, $\mu$ = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">mu</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span> <span class="n">axb</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="k">return</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next cell we plot in order of better <span class="math notranslate nohighlight">\(t_\mu(n)\)</span>, with its correspondent <span class="math notranslate nohighlight">\(g(n | b+\mu), \; t_\mu(n)\)</span> and the cumulative function, <span class="math notranslate nohighlight">\(cdf(n | b+\mu)\)</span>.</p>
+<p>The interval <span class="math notranslate nohighlight">\([n_l(\mu), n_u(\mu)]\)</span> is defined by the range of <span class="math notranslate nohighlight">\(n\)</span> values till cumulative function surpassses a given <span class="math notranslate nohighlight">\(\beta\)</span> contaiment (the dashed line in the plot).</p>
+<p>For this case <span class="math notranslate nohighlight">\(b = 3, \, \mu = 0.5, \; \beta = 90\)</span> %.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.90</span>
+<span class="n">plt_rmu_fc</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">beta</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rmu segment for b  3.0 and mu  0.5  =  (0, 6)
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_41_1.png" src="_images/ta_confidence_intervals_41_1.png" />
+</div>
+</div>
+<p>The next cell show the confidence belt using the FC ordering for the case of a single counting experiment with <span class="math notranslate nohighlight">\(b = 3\)</span> at 68% and 98% contaiment.</p>
+<p><em>Explore</em> and obtain the confidence interval for different measurements, for example the problematic one <span class="math notranslate nohighlight">\(x = 0\)</span> that we studied with the classical construction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span>
+<span class="n">plt_confbelt</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;fc&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CI  (0.0, 0.9045226130653266)  at  0.9 CL for b =  3  and x0 =  0
+CI  (0.0, 0.06030150753768844)  at  0.68 CL for b =  3  and x0 =  0
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_43_1.png" src="_images/ta_confidence_intervals_43_1.png" />
+</div>
+</div>
+<p><strong>Exercise</strong>: FC is a frequentist method. Verify now that the FC contruction garantees <strong>coverage</strong> for some examples <span class="math notranslate nohighlight">\(b = 3, \mu_{true} = 0.5\)</span>.</p>
+<p><strong>Exercise</strong>: Compare the classical and frequentist interval, where they differ? where they are equal? Use the case for example <span class="math notranslate nohighlight">\(b=3\)</span>.</p>
+<div class="section" id="fc-confidence-intervals-in-n-dimensions">
+<h3>FC confidence intervals in n-dimensions<a class="headerlink" href="#fc-confidence-intervals-in-n-dimensions" title="Permalink to this heading">#</a></h3>
+<p>The classical ordering is hard to extend to n-dimensions. But FC is not.</p>
+<p>We redefine the variable:</p>
+<div class="math notranslate nohighlight">
+\[
+t_\mu = -2 \ln \frac{\mathcal{L}(x | \mu)}{\mathcal{L}(x| \hat{\mu}(x))}
+\]</div>
+<p>In this case, if <span class="math notranslate nohighlight">\(x\)</span> gives <span class="math notranslate nohighlight">\(\hat{\mu}(x) \simeq \mu\)</span>, <span class="math notranslate nohighlight">\(t_\mu \sim 0\)</span>, while if <span class="math notranslate nohighlight">\(\hat{\mu}(x)\)</span> is different from <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(t_\mu\)</span> is large.</p>
+<p>The larger <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> the most extreme is <span class="math notranslate nohighlight">\(x\)</span> with respect <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p>The pdf, <span class="math notranslate nohighlight">\(g(t_\mu | \mu)\)</span>, allow us to set the most <span class="math notranslate nohighlight">\(1-\beta\)</span> extreme <span class="math notranslate nohighlight">\(x\)</span> data for a given <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\beta = \int_0^{t_{\mu}(\beta)} g(t_\mu | \mu) \, \mathrm{d}t_\mu
+\]</div>
+<p>There is no lower, central or upper integral. The ordering set a unique interval</p>
+<p>In this case <span class="math notranslate nohighlight">\(\mu\)</span> is a vector. We scan a region of the vector space. For each point in that space we will compute the <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> pdf, <span class="math notranslate nohighlight">\(g(t_\mu | \mu)\)</span>, and the p-value of the observed data <span class="math notranslate nohighlight">\(x_0\)</span>. We will select the region of <span class="math notranslate nohighlight">\(\mu\)</span>, as the confidence region, which p-values are inside the <span class="math notranslate nohighlight">\(\beta\)</span> CL.</p>
+<p><strong>Example</strong>: Compute the distribution of <span class="math notranslate nohighlight">\(t_\mu(x)\)</span> for the case of <span class="math notranslate nohighlight">\(b=3\)</span> and <span class="math notranslate nohighlight">\(s=0.5\)</span> and <span class="math notranslate nohighlight">\(t_\mu\)</span> value for the observed data <span class="math notranslate nohighlight">\(x_0 = 1\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span>
+<span class="n">htexam</span><span class="o">.</span><span class="n">plt_tmus</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">mu</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value t0 : 0.17
+(xl, xu) with tmu &lt;= tmu0 : ( 0 ,  5 )
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_49_1.png" src="_images/ta_confidence_intervals_49_1.png" />
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="bayesian-credible-intervals">
+<h2>4. Bayesian Credible Intervals<a class="headerlink" href="#bayesian-credible-intervals" title="Permalink to this heading">#</a></h2>
+<p>Bayesians provide a <em>credible integral</em> at a <span class="math notranslate nohighlight">\(\beta\)</span> CL. The probability to find the true value inside the CI is <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>To obtain the CI, bayesians need the pdf <span class="math notranslate nohighlight">\(g(x | \mu)\)</span>, and  the prior probability of the relevant parameter, <span class="math notranslate nohighlight">\(\pi(\mu)\)</span>.</p>
+<p>In most cases, this prior is unknown, and they are forced to take a ‘reasonable’ prior. Using the Bayes’ theorem we can compute the <em>posterior probability</em>:</p>
+<div class="math notranslate nohighlight">
+\[
+p(\mu | x) = \frac{g(x |\mu) \, \pi(\mu)}{p(x)}
+\]</div>
+<p>The denominator, is in fact the probiblitity to get <span class="math notranslate nohighlight">\(x\)</span> for all posible hypotheses, <span class="math notranslate nohighlight">\(\mu\)</span>, that is:</p>
+<div class="math notranslate nohighlight">
+\[
+p(\mu | x) = \frac{g(x |\mu) \, \pi(\mu)}{\int g(x | \mu) \pi(\mu) \, \mathrm{d}\mu}
+\]</div>
+<div class="section" id="example-low-stats-poisson">
+<h3>Example: low stats poisson<a class="headerlink" href="#example-low-stats-poisson" title="Permalink to this heading">#</a></h3>
+<p>Consider the case of a counting experiment with <span class="math notranslate nohighlight">\(b\)</span> background events (<span class="math notranslate nohighlight">\(b\)</span> is known) and expect a signal <span class="math notranslate nohighlight">\(s\)</span> on top. If one measures <span class="math notranslate nohighlight">\(n\)</span>, the posterior probability for <span class="math notranslate nohighlight">\(s\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+p(b + s | n) = \frac{p(n | b + s) \,\pi(s)}{\int_s p(n | b+s) \, \pi(s) \, \mathrm{d}s}
+\]</div>
+<p>To get the <em>upper limit</em> CI at <span class="math notranslate nohighlight">\(\beta\)</span> CL, we integrate the posterior till the upper value, <span class="math notranslate nohighlight">\(s_u\)</span>, to get a total probability <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{0}^{s_u} p(b + s | n)  \, \mathrm{d}s = \beta
+\]</div>
+<p>We can take a ‘reasonable’ prior on <span class="math notranslate nohighlight">\(s\)</span> (as a constant if <span class="math notranslate nohighlight">\(s&gt;0\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\pi(s) = \left\{ \begin{array}{ll} 
+1 &amp; \mbox{if $s \ge 0$} \\
+0 &amp; \mbox{if $s \lt 0$}
+\end{array} \right.
+\end{split}\]</div>
+<p>The posterior of data <span class="math notranslate nohighlight">\(n\)</span> is proportional to:</p>
+<div class="math notranslate nohighlight">
+\[
+p(b + s | n) = \frac{(b+s)^n e^{-(b+s)}}{n!} = \Gamma(b+s,n+1,1)
+\]</div>
+<p>where, <span class="math notranslate nohighlight">\(\Gamma(x, \alpha, \beta)\)</span> is the gamma distribution.</p>
+<p>The case <span class="math notranslate nohighlight">\(b=0\)</span>, the denominator (see above) <span class="math notranslate nohighlight">\(\int_s p(n |s) \, \pi(s) \, \mathrm{d}s =  1\)</span>, and the numerator, reduces to:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{0}^{s_u} \Gamma(s, n+1, 1) \, \mathrm{d}s = \beta
+\]</div>
+<p>For a value of <span class="math notranslate nohighlight">\(b\)</span>, we need to solve:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\int_{0}^{s_u} \Gamma(b+s, n+1, 1) \mathrm{d}s}{\int_{0}^{\infty} \Gamma(b+s, n+1, 1) \, \mathrm{d}s} = \beta
+\]</div>
+<p>That can be computed with the change <span class="math notranslate nohighlight">\(u=s+b\)</span>.</p>
+<p><strong>Example:</strong> Compute the posterior probability of the signal <span class="math notranslate nohighlight">\(s\)</span> for an experiment that expect <span class="math notranslate nohighlight">\(b = 3\)</span> background events and measures <span class="math notranslate nohighlight">\(n_0 = 0\)</span> or <span class="math notranslate nohighlight">\(n_0 = 6\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.</span>
+<span class="n">nmax</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">htexam</span><span class="o">.</span><span class="n">bayes_poisson_upper</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral : 0.9999999999999999
+Upper limit  68 % CL : 1.1422845691382766
+Upper limit  90 % CL : 2.3046092184368736
+Upper limit  95 % CL : 3.006012024048096
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_56_1.png" src="_images/ta_confidence_intervals_56_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">10.</span>
+<span class="n">nmax</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">htexam</span><span class="o">.</span><span class="n">bayes_poisson_ci</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">nmax</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral : 1.0000000000000002
+CI  68 % CL : ( 4.68937875751503 ,  11.306613226452905 )
+CI  90 % CL : ( 3.1262525050100196 ,  14.016032064128256 )
+CI  95 % CL : ( 2.4488977955911824 ,  15.422845691382765 )
+</pre></div>
+</div>
+<img alt="_images/ta_confidence_intervals_57_1.png" src="_images/ta_confidence_intervals_57_1.png" />
+</div>
+</div>
+<p><strong>Example:</strong> Compute the upper limit, <span class="math notranslate nohighlight">\(s_u\)</span>, using Bayes’ CI at 90% CL for different values of <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(n\)</span> observations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span><span class="p">,</span> <span class="n">ndim</span><span class="p">,</span> <span class="n">nobs</span> <span class="o">=</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">5</span>
+<span class="n">bs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">ndim</span><span class="p">)</span>
+<span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;cyan&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ni</span> <span class="ow">in</span> <span class="n">ns</span><span class="p">:</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">ni</span><span class="p">]</span>
+    <span class="n">cbs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">stats</span><span class="o">.</span><span class="n">gamma</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">bi</span><span class="p">,</span> <span class="n">ni</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">bi</span> <span class="ow">in</span> <span class="n">bs</span><span class="p">])</span>
+    <span class="n">betaps</span> <span class="o">=</span> <span class="n">beta</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cbs</span><span class="p">)</span><span class="o">+</span><span class="n">cbs</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">stats</span><span class="o">.</span><span class="n">gamma</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">betapi</span><span class="p">,</span> <span class="n">ni</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">bi</span> <span class="k">for</span> <span class="n">bi</span><span class="p">,</span> <span class="n">betapi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="n">betaps</span><span class="p">)])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="n">ss</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;x = </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ni</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$b$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$s_u$ bayes </span><span class="si">{:d}</span><span class="s1"> %CL&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">beta</span><span class="p">)));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ta_confidence_intervals_59_0.png" src="_images/ta_confidence_intervals_59_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ta_hypothesis_test.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Hypothesis testing, simple case</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ta_hypothesis_test_composite.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hypothesis testing, composite case</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By José Ángel Hernando Morata<br/>
+  
+      &copy; Copyright USC - J.A. Hernando - 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
