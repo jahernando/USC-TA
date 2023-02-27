@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro.md
+chapters:
+- file: ta_basic_concepts.ipynb
+- file: ta_hypothesis_test.ipynb
+- file: ta_confidence_intervals.ipynb
+- file: ta_hypothesis_test_composite.ipynb
