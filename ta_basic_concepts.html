@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Hypothesis testing, simple case" href="ta_hypothesis_test.html" />
-    <link rel="prev" title="Neutrinos - USC" href="intro.html" />
+    <link rel="prev" title="Statistics for Particle Physics" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Neutrinos - USC
+                    Statistics for Particle Physics
                 </a>
             </li>
         </ul>
@@ -514,7 +514,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Tue Feb  1 18:06:03 2022
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Mon Feb 27 17:14:36 2023
 </pre></div>
 </div>
 </div>
@@ -788,14 +788,16 @@ We define the covariance element between <span class="math notranslate nohighlig
 \]</div>
 <p>If the variables <span class="math notranslate nohighlight">\(x_i, \, x_j\)</span> variables are independent then the covariance is zero.
 The contrary is not necessarily true.</p>
-<p>We call <strong>marginal</strong> pdf when one or more rvs are integrated out, for example if we integrate <span class="math notranslate nohighlight">\(x_n\)</span>:
-$<span class="math notranslate nohighlight">\(
+<p>We call <strong>marginal</strong> pdf when one or more rvs are integrated out, for example if we integrate <span class="math notranslate nohighlight">\(x_n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 g(x_1,\dots,x_{n-1}) = \int g({\bf x}) \mathrm{d}x_n
-\)</span>$</p>
-<p>We can “project” the pdf in one axis, that is get the marginal pdf for each variable <span class="math notranslate nohighlight">\(x_i\)</span> individually:
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>We can “project” the pdf in one axis, that is get the marginal pdf for each variable <span class="math notranslate nohighlight">\(x_i\)</span> individually:</p>
+<div class="math notranslate nohighlight">
+\[
 g(x_j) = \int g({\bf x}) \, \Pi_{i=1,n; i \neq j} \, \mathrm{d}x_i
-\)</span>$</p>
+\]</div>
 <p><strong>Exercise:</strong> Get the poisson distribution from a Gamma distribution.</p>
 <p><strong>Exercise:</strong> Get an exponential distribution from a Gamma distribution.</p>
 <p><strong>Exercise:</strong> Get the <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution from a Gamma distribution.</p>
@@ -852,7 +854,7 @@ p(\mu | x)
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><a class="reference internal" href="_images/bayes_cartoon.png"><img alt="_images/bayes_cartoon.png" src="_images/bayes_cartoon.png" style="width: 600px;" /></a></p></td>
+<tr class="row-even"><td class="text-align:center"><p><a class="reference internal" href="_images/bayes_cartoon.png"><img alt="_images/bayes_cartoon.png" src="_images/bayes_cartoon.png" style="width: 300px;" /></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -885,7 +887,7 @@ p(\mu | x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu mean : -0.12243391198311748 , mu std : 0.31622776601683794
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu mean : -0.014537270313209675 , mu std : 0.31622776601683794
 </pre></div>
 </div>
 <img alt="_images/ta_basic_concepts_39_1.png" src="_images/ta_basic_concepts_39_1.png" />
@@ -941,7 +943,7 @@ p(\mu | x_0) = \frac{g( x_0 | \mu, \sigma = 1) \, \pi(\mu)}{ \int g(x_0 | \mu, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>posterior integral 1.007
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>posterior integral 0.998
 </pre></div>
 </div>
 <img alt="_images/ta_basic_concepts_46_1.png" src="_images/ta_basic_concepts_46_1.png" />
@@ -957,7 +959,7 @@ p(\mu | x_0) = \frac{g( x_0 | \mu, \sigma = 1) \, \pi(\mu)}{ \int g(x_0 | \mu, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu mean : 0.4027521257624195 , mu std : 0.31622776601683794
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu mean : 0.09579279651840296 , mu std : 0.31622776601683794
 posterior integral 1.000
 </pre></div>
 </div>
@@ -1036,7 +1038,7 @@ data : 1  posteriors:  [0.00000000e+00 9.84378755e-01 1.53809180e-02 2.40326845e
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Neutrinos - USC</p>
+            <p class="prev-next-title">Statistics for Particle Physics</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ta_hypothesis_test.html" title="next page">

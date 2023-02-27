@@ -8,7 +8,7 @@ Institution: Physics Master, **Universidade de Santiago de Compostela**
 
 email: jose.hernando@usc.es
 
-Vresión: February 2023
+Versión: February 2023
 
 
 ## About these lectures
