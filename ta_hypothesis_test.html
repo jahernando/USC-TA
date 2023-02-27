@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Neutrinos - USC
+                    Introduction
                 </a>
             </li>
         </ul>
@@ -367,7 +367,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#test-statistic">
-   1. Test statistic
+   Test statistic
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -389,27 +389,27 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#significance-and-power">
-   2. Significance and power
+   Significance and power
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#discovery-and-rejection">
-   3. Discovery and rejection
+   Discovery and rejection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-cls-method">
-   4. The CLs method
+   The CLs method
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nuissance-parameters">
-   5. Nuissance parameters
+   Nuissance parameters
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#composite-hypothesis">
-   6. Composite hypothesis
+  <a class="reference internal nav-link" href="#intro-to-composite-hypothesis">
+   Intro to composite hypothesis
   </a>
  </li>
 </ul>
@@ -438,7 +438,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#test-statistic">
-   1. Test statistic
+   Test statistic
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -460,27 +460,27 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#significance-and-power">
-   2. Significance and power
+   Significance and power
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#discovery-and-rejection">
-   3. Discovery and rejection
+   Discovery and rejection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-cls-method">
-   4. The CLs method
+   The CLs method
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nuissance-parameters">
-   5. Nuissance parameters
+   Nuissance parameters
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#composite-hypothesis">
-   6. Composite hypothesis
+  <a class="reference internal nav-link" href="#intro-to-composite-hypothesis">
+   Intro to composite hypothesis
   </a>
  </li>
 </ul>
@@ -505,7 +505,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Tue Feb  8 13:18:46 2022
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Mon Feb 27 17:23:40 2023
 </pre></div>
 </div>
 </div>
@@ -552,10 +552,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [0.12769483]
-H0 p-value    : 0.44919524
-H1 p-value    : 0.00203745
-CLs           : 0.00369904 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [0.04775964]
+H0 p-value    : 0.48095390
+H1 p-value    : 0.00157739
+CLs           : 0.00303901 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_5_1.png" src="_images/ta_hypothesis_test_5_1.png" />
@@ -570,7 +570,7 @@ CLs           : 0.00369904
 </div>
 <hr class="docutils" />
 <div class="section" id="test-statistic">
-<h2>1. Test statistic<a class="headerlink" href="#test-statistic" title="Permalink to this heading">#</a></h2>
+<h2>Test statistic<a class="headerlink" href="#test-statistic" title="Permalink to this heading">#</a></h2>
 <p>We need to <strong>order</strong> data, <span class="math notranslate nohighlight">\(x\)</span>, along the axis from <span class="math notranslate nohighlight">\(H_0\)</span> to <span class="math notranslate nohighlight">\(H_1\)</span>, to the left is more <span class="math notranslate nohighlight">\(H_0\)</span>, to the right, more <span class="math notranslate nohighlight">\(H_1\)</span>.</p>
 <p>The <strong>test estatistics</strong>, <span class="math notranslate nohighlight">\(q(x)\)</span>, is a real scalar quantity that quantifies how compatible is our data, <span class="math notranslate nohighlight">\(x\)</span>, with the null, <span class="math notranslate nohighlight">\(H_0\)</span>, and the alternative, <span class="math notranslate nohighlight">\(H_1\)</span>, hypotheses.</p>
 <p>As convention, we consider that as <span class="math notranslate nohighlight">\(q(x)\)</span> values increases, they indicate a better agreement with <span class="math notranslate nohighlight">\(H_1\)</span> than with <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
@@ -656,10 +656,10 @@ and <span class="math notranslate nohighlight">\(H_1\)</span> again a gaussian d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : 6
-H0 p-value    : 0.08391794
-H1 p-value    : 0.13014142
-CLs           : 0.13465346 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : 1
+H0 p-value    : 0.95021293
+H1 p-value    : 0.00049940
+CLs           : 0.00250768 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_18_1.png" src="_images/ta_hypothesis_test_18_1.png" />
@@ -772,7 +772,7 @@ CLs           : 0.13465346
 </div>
 <hr class="docutils" />
 <div class="section" id="significance-and-power">
-<h2>2. Significance and power<a class="headerlink" href="#significance-and-power" title="Permalink to this heading">#</a></h2>
+<h2>Significance and power<a class="headerlink" href="#significance-and-power" title="Permalink to this heading">#</a></h2>
 <p>We can classify events into <span class="math notranslate nohighlight">\(H_0\)</span> or <span class="math notranslate nohighlight">\(H_1\)</span> hypothesis using a threshold, <span class="math notranslate nohighlight">\(k\)</span>, on the test statistics:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -804,10 +804,10 @@ q(x) &lt; k
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [0.69877349]
-H0 p-value    : 0.24234680
-H1 p-value    : 0.01068942
-CLs           : 0.01410859 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [-0.55520119]
+H0 p-value    : 0.71062147
+H1 p-value    : 0.00018884
+CLs           : 0.00065259 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_35_1.png" src="_images/ta_hypothesis_test_35_1.png" />
@@ -832,7 +832,7 @@ CLs           : 0.01410859
 </div>
 </div>
 <div class="section" id="discovery-and-rejection">
-<h2>3. Discovery and rejection<a class="headerlink" href="#discovery-and-rejection" title="Permalink to this heading">#</a></h2>
+<h2>Discovery and rejection<a class="headerlink" href="#discovery-and-rejection" title="Permalink to this heading">#</a></h2>
 <p>We claim:</p>
 <ul class="simple">
 <li><p><strong>discovery</strong> (evidency) of <span class="math notranslate nohighlight">\(H_1\)</span> if the <span class="math notranslate nohighlight">\(H_0\)</span> p-value (<span class="math notranslate nohighlight">\(\alpha\)</span>) is lower that <span class="math notranslate nohighlight">\(2.87 \times 10^{-7}\)</span>, that corresponds to <span class="math notranslate nohighlight">\(Z = 5\)</span>.</p></li>
@@ -853,10 +853,10 @@ CLs           : 0.01410859
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [5.23123847]
-H0 p-value    : 0.00000008
-H1 p-value    : 0.59143523
-CLs           : 0.59143528 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [6.86111895]
+H0 p-value    : 0.00000000
+H1 p-value    : 0.96863631
+CLs           : 0.96863631 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_40_1.png" src="_images/ta_hypothesis_test_40_1.png" />
@@ -877,10 +877,10 @@ Can you exclude <span class="math notranslate nohighlight">\(H_1\)</span> at 90%
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [-2.45734665]
-H0 p-value    : 0.99300162
-H1 p-value    : 0.00000036
-CLs           : 0.00005106 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [-1.66800832]
+H0 p-value    : 0.95234296
+H1 p-value    : 0.00001536
+CLs           : 0.00032238 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_43_1.png" src="_images/ta_hypothesis_test_43_1.png" />
@@ -904,10 +904,10 @@ CLs           : 0.00005106
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [2.52398381]
-H0 p-value    : 0.00580166
-H1 p-value    : 0.16098774
-CLs           : 0.16192719 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [2.21525579]
+H0 p-value    : 0.01337126
+H1 p-value    : 0.13266154
+CLs           : 0.13445943 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_46_1.png" src="_images/ta_hypothesis_test_46_1.png" />
@@ -937,7 +937,7 @@ CLs           : 0.50000014
 </div>
 <hr class="docutils" />
 <div class="section" id="the-cls-method">
-<h2>4. The CLs method<a class="headerlink" href="#the-cls-method" title="Permalink to this heading">#</a></h2>
+<h2>The CLs method<a class="headerlink" href="#the-cls-method" title="Permalink to this heading">#</a></h2>
 <p>In some cases the <span class="math notranslate nohighlight">\(H_1\)</span> hypothesis is ‘weak’ compared with <span class="math notranslate nohighlight">\(H_0\)</span> and the distributions of the test statistic <span class="math notranslate nohighlight">\(g(q \, | H_0)\)</span> and <span class="math notranslate nohighlight">\(g(q \, | \,H_1) \)</span> overlap.</p>
 <p><strong>Example</strong>: Consider<span class="math notranslate nohighlight">\(H_0\)</span> as a poisson of <span class="math notranslate nohighlight">\(b\)</span> expected events, <span class="math notranslate nohighlight">\(b=4\)</span>, and the signal <span class="math notranslate nohighlight">\(s=0.5\)</span> events.</p>
 <p><strong>Question</strong>: If we measure <span class="math notranslate nohighlight">\(n \, = \,1\)</span>, the p-value for <span class="math notranslate nohighlight">\(H_1\)</span> is <span class="math notranslate nohighlight">\(0.061\)</span>, bellow 10%. Do we exclude the signal at 90% CL?</p>
@@ -1037,7 +1037,7 @@ CL_s \equiv \frac{CL_{s+b}}{CL_b} = \frac{\beta}{1-\alpha}
 </div>
 <hr class="docutils" />
 <div class="section" id="nuissance-parameters">
-<h2>5. Nuissance parameters<a class="headerlink" href="#nuissance-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Nuissance parameters<a class="headerlink" href="#nuissance-parameters" title="Permalink to this heading">#</a></h2>
 <p>Sometime the pdf depends also not only on <span class="math notranslate nohighlight">\(\mu\)</span> but on other parameters, <span class="math notranslate nohighlight">\(\nu\)</span> of no “physical interest”. There are called <strong>nuissance parameters</strong>.</p>
 <p>The pdf <span class="math notranslate nohighlight">\(g(x \, | \, \mu, \nu)\)</span>, were <span class="math notranslate nohighlight">\(\mu\)</span> is the parameter of interest, and <span class="math notranslate nohighlight">\(\nu\)</span> the nuisance parameter.</p>
 <p>In some cases, we can marginalize the nuissance parameters. One possibility is use <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/0168900292907945">the Cousins-Highland method</a> also known as a bayesian-frequentist hybrid method.</p>
@@ -1050,8 +1050,8 @@ g(x \, | \, \mu) = \int g( x \, | \, \mu, \nu) \, \pi(\nu) \, \mathrm{d}\nu
 <p>Notice that this method is a hybrid: frequentist-bayesian.</p>
 <p><strong>Exercise:</strong> Consider the case of an experiment that expects <span class="math notranslate nohighlight">\(b=2 \pm 0.2\)</span> background events, and search for a signal <span class="math notranslate nohighlight">\(s=5\)</span>. What is the effect of the uncertainty on <span class="math notranslate nohighlight">\(b\)</span> in the expected 95% CL limit?</p>
 </div>
-<div class="section" id="composite-hypothesis">
-<h2>6. Composite hypothesis<a class="headerlink" href="#composite-hypothesis" title="Permalink to this heading">#</a></h2>
+<div class="section" id="intro-to-composite-hypothesis">
+<h2>Intro to composite hypothesis<a class="headerlink" href="#intro-to-composite-hypothesis" title="Permalink to this heading">#</a></h2>
 <p>Often the <span class="math notranslate nohighlight">\(H_1\)</span> hypothesis is not complete, it depends on several parameters.</p>
 <p>A typical example if searching for a new signal with a unkown cross-section or half-lifetime. We resume the unknown into a parameter, <span class="math notranslate nohighlight">\(\mu\)</span>, that quantifies the strength of the signal.</p>
 <p><span class="math notranslate nohighlight">\(H_1\)</span> depends now on <span class="math notranslate nohighlight">\(\mu\)</span>. When <span class="math notranslate nohighlight">\(\mu=0\)</span>, we recuperate the case <span class="math notranslate nohighlight">\(H_0\)</span>.</p>

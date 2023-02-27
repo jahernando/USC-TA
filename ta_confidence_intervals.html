@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Statistics for Particle Physics
+                    Introduction
                 </a>
             </li>
         </ul>
@@ -367,17 +367,17 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#frequestist-vs-bayesians">
-   1. Frequestist vs Bayesians
+   Frequestist vs Bayesians
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#classical-frequentist-ci">
-   2. Classical frequentist CI
+   Classical frequentist CI
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#feldman-cousins-fc-ci">
-   3. Feldman-Cousins (FC) CI
+   Feldman-Cousins (FC) CI
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -389,7 +389,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bayesian-credible-intervals">
-   4. Bayesian Credible Intervals
+   Bayesian Credible Intervals
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -425,17 +425,17 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#frequestist-vs-bayesians">
-   1. Frequestist vs Bayesians
+   Frequestist vs Bayesians
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#classical-frequentist-ci">
-   2. Classical frequentist CI
+   Classical frequentist CI
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#feldman-cousins-fc-ci">
-   3. Feldman-Cousins (FC) CI
+   Feldman-Cousins (FC) CI
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -447,7 +447,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bayesian-credible-intervals">
-   4. Bayesian Credible Intervals
+   Bayesian Credible Intervals
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -524,7 +524,7 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <div class="section" id="frequestist-vs-bayesians">
-<h2>1. Frequestist vs Bayesians<a class="headerlink" href="#frequestist-vs-bayesians" title="Permalink to this heading">#</a></h2>
+<h2>Frequestist vs Bayesians<a class="headerlink" href="#frequestist-vs-bayesians" title="Permalink to this heading">#</a></h2>
 <p>Again…</p>
 <p>Frequentist talk about experiments in the same conditions. Bayesians talk about probabilities based on a prior knowledge or a ‘reasonable’ guess.</p>
 <p><strong>Frequentist</strong> say a CI <strong>covers</strong> the true value at a given <span class="math notranslate nohighlight">\(\beta\)</span> CL. That means that if you repeat a large number of times, <span class="math notranslate nohighlight">\(m\)</span>, an experiment at for each one you set a CI <span class="math notranslate nohighlight">\(\{\)</span>CI<span class="math notranslate nohighlight">\(_i, \, i=1, \dots, m \}\)</span>, at least a fraction <span class="math notranslate nohighlight">\(\beta\)</span> of the CIs cover the true value.</p>
@@ -536,7 +536,7 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <div class="section" id="classical-frequentist-ci">
-<h2>2. Classical frequentist CI<a class="headerlink" href="#classical-frequentist-ci" title="Permalink to this heading">#</a></h2>
+<h2>Classical frequentist CI<a class="headerlink" href="#classical-frequentist-ci" title="Permalink to this heading">#</a></h2>
 <p>Given <span class="math notranslate nohighlight">\(x\)</span> data that is related with a unknown parameter <span class="math notranslate nohighlight">\(\mu\)</span> via a pdf, <span class="math notranslate nohighlight">\(g(x | \mu)\)</span>, (i.e x is poisson distributed with mean <span class="math notranslate nohighlight">\(\mu\)</span>) How we can provide a frequentist CI for <span class="math notranslate nohighlight">\(\mu\)</span> given <span class="math notranslate nohighlight">\(x\)</span>?</p>
 <p>Classical CI are obtained using the <strong>Neyman construction</strong>.</p>
 <p>Later we will discuss the <strong>Feldman-Cousins construction</strong></p>
@@ -719,7 +719,7 @@ CI  (0.0, 0.24120603015075376)  at  0.68 CL for b =  3  and x0 =  1
 </div>
 <hr class="docutils" />
 <div class="section" id="feldman-cousins-fc-ci">
-<h2>3. Feldman-Cousins (FC) CI<a class="headerlink" href="#feldman-cousins-fc-ci" title="Permalink to this heading">#</a></h2>
+<h2>Feldman-Cousins (FC) CI<a class="headerlink" href="#feldman-cousins-fc-ci" title="Permalink to this heading">#</a></h2>
 <p>Feldman and Cousins, when working on 90’s on the NOMAD experiment, found several worrisome issues with classical CIs.</p>
 <p>And they proposed an ordering principle to compute the extreme of a data, <span class="math notranslate nohighlight">\(x\)</span>, with respect <span class="math notranslate nohighlight">\(\mu\)</span> based on the likelihood ratio.</p>
 <p>This ordering principle avoid the decision of lower, central and upper intervals. It passes smoothly from one to another.</p>
@@ -1033,7 +1033,7 @@ t_\mu = -2 \ln \frac{\mathcal{L}(x | \mu)}{\mathcal{L}(x| \hat{\mu}(x))}
 </div>
 <hr class="docutils" />
 <div class="section" id="bayesian-credible-intervals">
-<h2>4. Bayesian Credible Intervals<a class="headerlink" href="#bayesian-credible-intervals" title="Permalink to this heading">#</a></h2>
+<h2>Bayesian Credible Intervals<a class="headerlink" href="#bayesian-credible-intervals" title="Permalink to this heading">#</a></h2>
 <p>Bayesians provide a <em>credible integral</em> at a <span class="math notranslate nohighlight">\(\beta\)</span> CL. The probability to find the true value inside the CI is <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
 <p>To obtain the CI, bayesians need the pdf <span class="math notranslate nohighlight">\(g(x | \mu)\)</span>, and  the prior probability of the relevant parameter, <span class="math notranslate nohighlight">\(\pi(\mu)\)</span>.</p>
 <p>In most cases, this prior is unknown, and they are forced to take a ‘reasonable’ prior. Using the Bayes’ theorem we can compute the <em>posterior probability</em>:</p>

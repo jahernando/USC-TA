@@ -110,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Neutrinos - USC
+                    Introduction
                 </a>
             </li>
         </ul>
@@ -366,29 +366,29 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#profile-likelihood-scan">
-   1. Profile likelihood scan
+   Profile likelihood scan
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#profile-likelihood-ratio">
-     1.1 Profile likelihood ratio
+     Profile likelihood ratio
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#testing-the-null-hypothesis">
-     1.2 testing the null-hypothesis
+     testing the null-hypothesis
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#testing-the-alternative-hypothesis">
-     1.3 Testing the alternative hypothesis
+     Testing the alternative hypothesis
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nuissance-parameters">
-   5. Nuissance parameters
+   Nuissance parameters
   </a>
  </li>
 </ul>
@@ -417,29 +417,29 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#profile-likelihood-scan">
-   1. Profile likelihood scan
+   Profile likelihood scan
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#profile-likelihood-ratio">
-     1.1 Profile likelihood ratio
+     Profile likelihood ratio
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#testing-the-null-hypothesis">
-     1.2 testing the null-hypothesis
+     testing the null-hypothesis
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#testing-the-alternative-hypothesis">
-     1.3 Testing the alternative hypothesis
+     Testing the alternative hypothesis
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nuissance-parameters">
-   5. Nuissance parameters
+   Nuissance parameters
   </a>
  </li>
 </ul>
@@ -465,7 +465,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Fri Feb 11 18:34:27 2022
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Mon Feb 27 17:28:25 2023
 </pre></div>
 </div>
 </div>
@@ -511,7 +511,7 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <div class="section" id="profile-likelihood-scan">
-<h2>1. Profile likelihood scan<a class="headerlink" href="#profile-likelihood-scan" title="Permalink to this heading">#</a></h2>
+<h2>Profile likelihood scan<a class="headerlink" href="#profile-likelihood-scan" title="Permalink to this heading">#</a></h2>
 <p>Let’s consider a simple example. The null hypothesis a gaussian with <span class="math notranslate nohighlight">\(\mu_0=0\)</span> and sigma unity. And the alternative is a gaussian with <span class="math notranslate nohighlight">\(\mu\)</span> positive and sigma one.</p>
 <p>If <span class="math notranslate nohighlight">\(\mu = 3\)</span> half of the observations will indicate an observation at Z=3.</p>
 <p>If <span class="math notranslate nohighlight">\(\mu=5\)</span> half of the observation will imply discovery or Z=5.</p>
@@ -525,10 +525,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [-1.0341462]
-H0 p-value    : 0.84946609
-H1 p-value    : 0.00002740
-CLs           : 0.00018202 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [1.70521848]
+H0 p-value    : 0.04407684
+H1 p-value    : 0.09769780
+CLs           : 0.10220257 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_7_1.png" src="_images/ta_hypothesis_test_composite_7_1.png" />
@@ -570,7 +570,7 @@ t_\mu( x) = -2 \ln \, \frac{ \mathcal{L}( x \, | \mu)}{ \mathcal{L}( x \, | \, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean muhat :  2.0015597656250006 , std 1.0102648972676513
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean muhat :  2.015118457031251 , std 1.0358383419124886
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_14_1.png" src="_images/ta_hypothesis_test_composite_14_1.png" />
@@ -583,8 +583,8 @@ t_\mu( x) = -2 \ln \, \frac{ \mathcal{L}( x \, | \mu)}{ \mathcal{L}( x \, | \, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chi2  1.02063611304276
-p-value mean : 0.5130582365684075 ; std * sqrt(12.) : 0.9968037509944598
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chi2  1.0731925037236947
+p-value mean : 0.5062279743160385 ; std * sqrt(12.) : 1.0225881110751696
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_15_1.png" src="_images/ta_hypothesis_test_composite_15_1.png" />
@@ -593,7 +593,7 @@ p-value mean : 0.5130582365684075 ; std * sqrt(12.) : 0.9968037509944598
 <p><strong>Exercise</strong>: Consider the case of a poisson distribution with a unknown mean <span class="math notranslate nohighlight">\(\mu\)</span> and the null hypothesis <span class="math notranslate nohighlight">\(\mu_0\)</span>. Check for what values of <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(g(t_\mu | \mu)\)</span> follows a <span class="math notranslate nohighlight">\(\chi^2(1)\)</span> distribution.</p>
 <p><strong>Exercise</strong>: Consider the case of an experiment that get a sample of n-size poisson disbruted values, <span class="math notranslate nohighlight">\(x\)</span>, with a unknown mean <span class="math notranslate nohighlight">\(\mu\)</span>. Check the values of <span class="math notranslate nohighlight">\(n\)</span> for whose <span class="math notranslate nohighlight">\(g(t_\mu | \mu)\)</span> follows a <span class="math notranslate nohighlight">\(\chi^2(1)\)</span> distribution.</p>
 <div class="section" id="profile-likelihood-ratio">
-<h3>1.1 Profile likelihood ratio<a class="headerlink" href="#profile-likelihood-ratio" title="Permalink to this heading">#</a></h3>
+<h3>Profile likelihood ratio<a class="headerlink" href="#profile-likelihood-ratio" title="Permalink to this heading">#</a></h3>
 <p>We are back to the construct a CI of <span class="math notranslate nohighlight">\(\mu\)</span> at <span class="math notranslate nohighlight">\(\beta\)</span> CL given data <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
 <p>In the “gaussian” regime, we can profit from the simple relation between <span class="math notranslate nohighlight">\(t_\mu(x_0)\)</span> and its p-value, <span class="math notranslate nohighlight">\(p_\mu\)</span>, via the <span class="math notranslate nohighlight">\(\chi^2(1)\)</span> distribution:</p>
 <div class="math notranslate nohighlight">
@@ -621,7 +621,7 @@ p_\mu = 2 \, (1 - \Phi(\sqrt{t_\mu(x_0)}))
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data  [3.57242656 3.27784801] , best par  [3.4251709 1.       ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data  [3.77217939 3.9610446 ] , best par  [3.86660156 1.        ]
 </pre></div>
 </div>
 </div>
@@ -640,7 +640,7 @@ p_\mu = 2 \, (1 - \Phi(\sqrt{t_\mu(x_0)}))
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [2.72194937 4.1283252 ] at  68 % CL
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [3.16342408 4.56979991] at  68 % CL
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_21_1.png" src="_images/ta_hypothesis_test_composite_21_1.png" />
@@ -648,7 +648,7 @@ p_\mu = 2 \, (1 - \Phi(\sqrt{t_\mu(x_0)}))
 </div>
 </div>
 <div class="section" id="testing-the-null-hypothesis">
-<h3>1.2 testing the null-hypothesis<a class="headerlink" href="#testing-the-null-hypothesis" title="Permalink to this heading">#</a></h3>
+<h3>testing the null-hypothesis<a class="headerlink" href="#testing-the-null-hypothesis" title="Permalink to this heading">#</a></h3>
 <p>In same cases the strength parameter <span class="math notranslate nohighlight">\(\mu \ge \mu_0\)</span>, therefore the values of <span class="math notranslate nohighlight">\(\hat{\mu}(x) \lt \mu_0\)</span> do not challenge <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
 <p>If we define:</p>
 <div class="math notranslate nohighlight">
@@ -691,8 +691,8 @@ Z = \sqrt{q_0}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0  [2.40251017] parhat  [2.40249023 1.        ]
-q0  5.77205509427897 p-value 0.008141490999044487 Z-value 2.40251016528109
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0  [0.93663403] parhat  [0.93662109 1.        ]
+q0  0.8772833002374778 p-value 0.17447342134729427 Z-value 0.9366340268415823
 </pre></div>
 </div>
 </div>
@@ -700,7 +700,7 @@ q0  5.77205509427897 p-value 0.008141490999044487 Z-value 2.40251016528109
 <p><strong>Exercise</strong> Verify that the <span class="math notranslate nohighlight">\(q_0\)</span> distribution is a ‘half’-<span class="math notranslate nohighlight">\(\chi^2\)</span>.</p>
 </div>
 <div class="section" id="testing-the-alternative-hypothesis">
-<h3>1.3 Testing the alternative hypothesis<a class="headerlink" href="#testing-the-alternative-hypothesis" title="Permalink to this heading">#</a></h3>
+<h3>Testing the alternative hypothesis<a class="headerlink" href="#testing-the-alternative-hypothesis" title="Permalink to this heading">#</a></h3>
 <p>To set a <strong>upper</strong> limit on the value of <span class="math notranslate nohighlight">\(\mu\)</span>, the <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> above <span class="math notranslate nohighlight">\(\mu\)</span> do not challege the alternative hypothesis.</p>
 <p>With:</p>
 <div class="math notranslate nohighlight">
@@ -742,9 +742,9 @@ p_\mu = 1 - \Phi(\sqrt{q_\mu})
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0   [0.17375982] parbest  [0.17375 1.     ]
-qmu  7.9876335444270055 p-value  0.0023548967647081254  at mu  3.0
-upper limit : [1.45531139] at  90 % CL
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0   [0.0991649] parbest  [0.0991875 1.       ]
+qmu  8.41484425230116 p-value  0.0018608483812722065  at mu  3.0
+upper limit : [1.38071647] at  90 % CL
 </pre></div>
 </div>
 </div>
@@ -769,7 +769,7 @@ upper limit : [1.45531139] at  90 % CL
 </div>
 <hr class="docutils" />
 <div class="section" id="nuissance-parameters">
-<h2>5. Nuissance parameters<a class="headerlink" href="#nuissance-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Nuissance parameters<a class="headerlink" href="#nuissance-parameters" title="Permalink to this heading">#</a></h2>
 <p>Consider a counting experiment with a control region that is <span class="math notranslate nohighlight">\(\tau\)</span> times larger than the signal region. In both regions the expected background events is <span class="math notranslate nohighlight">\(\nu\)</span>, while in the signal region <span class="math notranslate nohighlight">\(\nu + \mu\)</span>.</p>
 <p><strong>Explore</strong> in the following toy the generation of some events, with different values of <span class="math notranslate nohighlight">\(\nu\)</span>, <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p>We are interested on measuring <span class="math notranslate nohighlight">\(\mu\)</span> and estimating <span class="math notranslate nohighlight">\(\nu\)</span> from the control sample. <span class="math notranslate nohighlight">\(\nu\)</span> is a nuisance parameter, how we can treat it?</p>
@@ -781,7 +781,7 @@ upper limit : [1.45531139] at  90 % CL
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bkg events : 39 signal events : 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bkg events : 44 signal events : 2
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_36_1.png" src="_images/ta_hypothesis_test_composite_36_1.png" />
@@ -830,10 +830,10 @@ g(n, \, m \, | \, \mu, \, \nu) = \frac{(\nu+\mu )^m \, e^{-(\nu + \mu)}}{m!} \, 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu, nu true   : 6.0 2.0
-events in control, signal region : 37.0 5.0
-events in control region/tau     : 1.85
-par best : [ 3.14996555  1.85000468 20.        ]
-par best : [ 6.          1.81728516 20.        ]  fix mu at  6.0
+events in control, signal region : 34.0 7.0
+events in control region/tau     : 1.7
+par best : [ 5.30004044  1.69999786 20.        ]
+par best : [ 6.          1.69238281 20.        ]  fix mu at  6.0
 </pre></div>
 </div>
 </div>
@@ -884,9 +884,9 @@ par best : [ 6.          1.81728516 20.        ]  fix mu at  6.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H0 p-value  0.03272191027354576 Z-value  1.8422142246679785
-upper limit : [6.60588413] at  90 % CL
-central CI  : [0.25116516 7.80185687] at  90 % CL
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H0 p-value  0.0018118256911747732 Z-value  2.909191227333295
+upper limit : [9.27399584] at  90 % CL
+central CI  : [ 1.75583894 10.61477089] at  90 % CL
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_49_1.png" src="_images/ta_hypothesis_test_composite_49_1.png" />
@@ -913,9 +913,9 @@ central CI  : [0.25116516 7.80185687] at  90 % CL
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data     : (48.0, 14.0)
-best par : [9.20001667 4.80000312]
-central CI : [ 3.76409659 16.36610927]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data     : (44.0, 16.0)
+best par : [11.59995725  4.40000524]
+central CI : [ 5.7652542  19.17913262]
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_53_1.png" src="_images/ta_hypothesis_test_composite_53_1.png" />
