@@ -6,9 +6,9 @@ Contributors: Carlos Vázquez Sierra
 
 Institution: Physics Master, **Universidade de Santiago de Compostela**
 
-Correo electrónico: jose.hernando@usc.es
+email: jose.hernando@usc.es
 
-Vesión: Febero 2023
+Vresión: February 2023
 
 
 ## About these lectures
