@@ -136,6 +136,16 @@ const thebe_selector_output = ".output, .cell_output"
    Hypothesis testing, composite case
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test_composite_example.html">
+   Hypothesis testing: a practical example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_exercise_hgg_hcomposite.html">
+   TA Exercise: Higgs to gamma gamma
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -514,7 +524,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Mon Feb 27 17:22:07 2023
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Wed Feb 14 17:12:08 2024
 </pre></div>
 </div>
 </div>
@@ -575,11 +585,15 @@ title="Print to PDF"
 </ul>
 </div>
 <div class="section" id="id1">
-<h3>Bayes’ theorem<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference external" href="https://en.wikipedia.org/wiki/Thomas_Bayes">Bayes</a>’ theorem<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>The probability <span class="math notranslate nohighlight">\(P(A)\)</span> that an event happens is called <strong>marginal probability</strong>.</p>
 <p>For example, the probability to roll a dice and get 3.</p>
 <p>The probability that an event <span class="math notranslate nohighlight">\(A\)</span> happens if another one <span class="math notranslate nohighlight">\(B\)</span> has happened is called <strong>conditional probability</strong>, <span class="math notranslate nohighlight">\(P(A|B)\)</span>.</p>
 <p>For example, the probability that rolling your dice is 3 if you know that the number obtained was odd, in that case <span class="math notranslate nohighlight">\(P(3|\mathrm{odd})=1/3\)</span>.</p>
+<p>The Bayes’ theorem states:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(A|B) \, P(B) = P(B|A) \, P(A)\)</span>.</p></li>
+</ul>
 <p>The conditional probabilities <span class="math notranslate nohighlight">\(P(A|B)\)</span> and <span class="math notranslate nohighlight">\(P(B|A)\)</span> are defined from the probabilities of both events A and B to happen and their marginal probabilities, this is:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(P(A \cup B) = P(A|B) \, P(B)\)</span> , with <span class="math notranslate nohighlight">\(P(B) \neq 0\)</span>,</p></li>
@@ -603,7 +617,9 @@ P(A|B) \, P(B) = P(B|A)\,P(A)
 \[
 \frac{11}{36} \, \frac{2}{11} = \frac{2}{5} \, \frac{5}{36} = \frac{1}{18}
 \]</div>
-<p><strong>Exercise:</strong> In a low prevalence population, the probability of an individual to have HIV+ is 1 in 1000. Consider a medical test of HIV. If the patient is HIV+, the test is positive in 99.8 % of the times (true-positive), but if the person is HIV-, the test can wrongly be positive in 0.2 % of the times. After a test, a patient is diagnosed with HIV+, what is the probability that he has HIV +? Should the doctor repeat the test?</p>
+<p><strong>Exercise:</strong> In a low prevalence population, the probability of an individual to have HIV+ is 1 in 1000. Consider a medical test of HIV.</p>
+<p>If the patient is HIV+, the test is positive in 99.8 % of the times (true-positive), but if the person is HIV-, the test can wrongly be positive in 0.2 % of the times.</p>
+<p>After a test, a patient is diagnosed with HIV+, what is the probability that he has HIV +? Should the doctor repeat the test?</p>
 <div class="math notranslate nohighlight">
 \[
 p(H+ | +) = \frac{p(+ | H+) p(H+)}{p(+)} =  \frac{p(+ | H+) p(H+)}{p(+ | H+) p (H+) + p(+ | H-) p (H-)}
@@ -635,7 +651,7 @@ p(H+) = 10^{-3}, \; p(H-) = 1-10^{-3}, \; p(+ | H+) = 0.998, \; p(+ | H-) = 0.00
 <div class="section" id="probability-density-functions">
 <h2>Probability density functions<a class="headerlink" href="#probability-density-functions" title="Permalink to this heading">#</a></h2>
 <p>Measurements are of probabilistic nature, there are <strong>random variables</strong> (rv).</p>
-<p>The distribution probability, <span class="math notranslate nohighlight">\(g(x)\)</span>, that follow a rv is called <strong>probability density function</strong>, pdf.</p>
+<p>The distribution probability, <span class="math notranslate nohighlight">\(g(x)\)</span>, that follows a rv is called <strong>probability density function</strong>, pdf.</p>
 <p>If <span class="math notranslate nohighlight">\(x\)</span> takes discrete values, it is called <strong>probability mass function</strong>, pmf.</p>
 <p>Here we will abuse the lenguage and call them both as ‘pdf’.</p>
 <p>In most of the cases the pdfs depends on some parameters <span class="math notranslate nohighlight">\(\mu\)</span>, indicated as <span class="math notranslate nohighlight">\(g(x | \mu)\)</span>.</p>
@@ -660,7 +676,7 @@ F(x) = \int_{-\infty}^{x} g(x) \, \mathrm{d}x
 g(n|N,p) = \frac{N!}{n! (N-n)!} p^n (1-p)^{N-n}
 \]</div>
 <ul class="simple">
-<li><p><strong>Poisson</strong>. Number of events if we expect <span class="math notranslate nohighlight">\(\nu\)</span>, <em>i.e.</em> the number of interactions in a crossing of the LHC beams is modeled with a poisson. Nuclear decays are poisson distributed too.</p></li>
+<li><p><strong>Poisson</strong>. Number of events if we expect <span class="math notranslate nohighlight">\(\nu\)</span>, <em>i.e.</em> the number of interactions in a crossing of the LHC beams is modeled with a poisson. Nuclear decays are poisson distributed poisson too.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[ 
@@ -725,15 +741,15 @@ g(x | \alpha,\beta) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-x \b
 <p><strong>Exercise:</strong> Compare a poisson distribution, with <span class="math notranslate nohighlight">\(\nu=p \, N\)</span> with a binomial when <span class="math notranslate nohighlight">\(N\)</span> is large and <span class="math notranslate nohighlight">\(p\)</span> is small.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">0.015</span><span class="p">;</span> <span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mf">0.002</span><span class="p">;</span> <span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;binomial&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">N</span><span class="o">*</span><span class="n">p</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span> <span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;poisson&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;g(x)&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;g(n)&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ta_basic_concepts_20_0.png" src="_images/ta_basic_concepts_20_0.png" />
+<img alt="_images/ta_basic_concepts_21_0.png" src="_images/ta_basic_concepts_21_0.png" />
 </div>
 </div>
 <p><strong>Exercise:</strong> Compare a gaussian distribution, with <span class="math notranslate nohighlight">\(\mu=p \, N, \, \sigma = \sqrt{\mu}\)</span> with a binomial when <span class="math notranslate nohighlight">\(N\)</span> is large and <span class="math notranslate nohighlight">\(p\)</span> is small and <span class="math notranslate nohighlight">\(\mu = N p &gt; 50\)</span>.</p>
@@ -747,7 +763,7 @@ g(x | \alpha,\beta) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-x \b
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ta_basic_concepts_22_0.png" src="_images/ta_basic_concepts_22_0.png" />
+<img alt="_images/ta_basic_concepts_23_0.png" src="_images/ta_basic_concepts_23_0.png" />
 </div>
 </div>
 <p><strong>Exercise:</strong> Check that from a “large” <span class="math notranslate nohighlight">\(\nu\)</span> the poisson distribution is equivalent to a gaussian distribution.</p>
@@ -777,7 +793,7 @@ V[x] = \sigma^2 = E[(x-\mu)^2]= E[x^2]-\mu^2 \equiv \int (x-\mu)^2 \, g(x) \, \m
 <p>The <strong>median</strong>, is the <span class="math notranslate nohighlight">\(x_{med}\)</span> value that divides the distribution in half,</p>
 <div class="math notranslate nohighlight">
 \[
-\int_0^{x_{med}} g(x) \mathrm{d}x = 0.5
+\int_0^{x_{med}} g(x) \, \mathrm{d}x = 0.5
 \]</div>
 <p>For a symmetric pdf, the mean and median are the same.</p>
 <p>If <span class="math notranslate nohighlight">\({\bf x}\)</span> is a vector, the pdf is a n-dimensional function.
@@ -860,7 +876,7 @@ p(\mu | x)
 </table>
 <p>Most of physicists we are bayesians, but we think of ourselves as frequentists.</p>
 <p>Consider the discovery of the Higgs.</p>
-<p>A frequentist claims: <em>LHC data strongly disagrees with the hypothesis of the SM without the Higgs and agrees with a Higgs.</em></p>
+<p>A frequentist claims: <em>LHC data strongly disagrees with the hypothesis of the SM without the Higgs and agrees with the existence of the Higgs.</em></p>
 <p>While a Bayesian claims: <em>We have discovered the Higgs!</em></p>
 <p>A joke in HEP (L. Lyons quotation?):</p>
 <p>Frequentists use implecable logic to answer questions that nobody cares about.</p>
@@ -879,7 +895,7 @@ p(\mu | x)
 <p><strong>Explore:</strong> Generate <span class="math notranslate nohighlight">\(n\)</span> samples of a normal. Compute the likelihood as function of the mean (fix sigma of the gaussian to 1).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nsize</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nsize</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">xs</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">nsize</span><span class="p">)</span>
 <span class="n">htexam</span><span class="o">.</span><span class="n">normal_likelihood</span><span class="p">(</span><span class="n">xs</span><span class="p">);</span>
 <span class="c1">#plt.yscale(&#39;log&#39;);</span>
@@ -887,10 +903,10 @@ p(\mu | x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu mean : 0.21246013710132722 , mu std : 0.31622776601683794
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu mean : 0.005225524791819061 , mu std : 0.1
 </pre></div>
 </div>
-<img alt="_images/ta_basic_concepts_39_1.png" src="_images/ta_basic_concepts_39_1.png" />
+<img alt="_images/ta_basic_concepts_40_1.png" src="_images/ta_basic_concepts_40_1.png" />
 </div>
 </div>
 </div>
@@ -935,7 +951,7 @@ p(\mu | x_0) = \frac{g( x_0 | \mu, \sigma = 1) \, \pi(\mu)}{ \int g(x_0 | \mu, \
 <p><strong>Exercise:</strong> Show that the posterior of n measurements, <span class="math notranslate nohighlight">\(x\)</span>, normal distributed, <span class="math notranslate nohighlight">\(g(x | \mu, \sigma)\)</span>, with a flat prior on <span class="math notranslate nohighlight">\(\mu\)</span>, and known <span class="math notranslate nohighlight">\(\sigma\)</span>, is a gaussian with mean <span class="math notranslate nohighlight">\(\mu = \bar{x}\)</span>, the average of the <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(x\)</span> measurements, and the sigma <span class="math notranslate nohighlight">\(\sigma/\sqrt{n}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nsize</span> <span class="o">=</span> <span class="mi">1000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nsize</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">xs</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">nsize</span><span class="p">)</span>
 <span class="c1">#print(xs)</span>
 <span class="n">htexam</span><span class="o">.</span><span class="n">normal_posterior</span><span class="p">(</span><span class="n">xs</span><span class="p">);</span>
@@ -943,15 +959,15 @@ p(\mu | x_0) = \frac{g( x_0 | \mu, \sigma = 1) \, \pi(\mu)}{ \int g(x_0 | \mu, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>posterior integral 0.993
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>posterior integral 0.995
 </pre></div>
 </div>
-<img alt="_images/ta_basic_concepts_46_1.png" src="_images/ta_basic_concepts_46_1.png" />
+<img alt="_images/ta_basic_concepts_47_1.png" src="_images/ta_basic_concepts_47_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nsize</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nsize</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">xs</span>    <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">nsize</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="n">htexam</span><span class="o">.</span><span class="n">normal_likelihood</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">htexam</span><span class="o">.</span><span class="n">normal_posterior</span><span class="p">(</span><span class="n">xs</span><span class="p">);</span>
@@ -959,11 +975,11 @@ p(\mu | x_0) = \frac{g( x_0 | \mu, \sigma = 1) \, \pi(\mu)}{ \int g(x_0 | \mu, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu mean : 0.2085938276632863 , mu std : 0.31622776601683794
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu mean : -0.027511730127815368 , mu std : 0.5
 posterior integral 1.000
 </pre></div>
 </div>
-<img alt="_images/ta_basic_concepts_47_1.png" src="_images/ta_basic_concepts_47_1.png" />
+<img alt="_images/ta_basic_concepts_48_1.png" src="_images/ta_basic_concepts_48_1.png" />
 </div>
 </div>
 <p><strong>Exercise:</strong> Show that the posterior of a normal prior, <span class="math notranslate nohighlight">\(\pi(\mu | \mu_0, \sigma_{\mu_0})\)</span>,

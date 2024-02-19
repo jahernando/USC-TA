@@ -1,0 +1,1264 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TA Exercise: Higgs to gamma gamma &#8212; Statistics for Particle Physics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Particle Physics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_basic_concepts.html">
+   Revisiting the basic concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test.html">
+   Hypothesis testing, simple case
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test_composite.html">
+   Hypothesis testing, composite case
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test_composite_example.html">
+   Hypothesis testing: a practical example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_exercise_hgg_hcomposite.html">
+   TA Exercise: Higgs to gamma gamma
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-TA/master?urlpath=tree/docs/ta_exercise_Hgg.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jahernando/USC-TA/blob/master/docs/ta_exercise_Hgg.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-TA"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-TA/issues/new?title=Issue%20on%20page%20%2Fta_exercise_Hgg.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/ta_exercise_Hgg.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>TA Exercise: Higgs to gamma gamma</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="ta-exercise-higgs-to-gamma-gamma">
+<h1>TA Exercise: Higgs to gamma gamma<a class="headerlink" href="#ta-exercise-higgs-to-gamma-gamma" title="Permalink to this heading">#</a></h1>
+<p>J.A Hernando, 12 Febrero 2024</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">optimize</span>
+
+<span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data). </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;seaborn-colorblind&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">htcore</span>    <span class="k">as</span> <span class="nn">htcore</span>
+<span class="kn">import</span> <span class="nn">htcatalog</span> <span class="k">as</span> <span class="nn">htcata</span>
+<span class="kn">import</span> <span class="nn">httoys</span>    <span class="k">as</span> <span class="nn">httoys</span>
+<span class="kn">import</span> <span class="nn">htplot</span>    <span class="k">as</span> <span class="nn">htplot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong> The following data correspond to the Higgs to gamma gamma events. selected by the ATLAS experiment during the first run of LHC. The list is the number of events in bins of the invariant mass of the two gammas.</p>
+<p>Consider that the background follows an exponential distribution. and the Higgs signal a gaussian. Estimate the mean value of the Higgs mass and the standard deviation. Compute also the p-value considering that there is no Higgs. ¿Can you clain a discovery?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<span class="mf">105.2488132203966</span><span class="p">,</span> <span class="mf">1482.3547109494102</span><span class="p">,</span>
+<span class="mf">105.94694793076935</span><span class="p">,</span> <span class="mf">1503.662077292889</span><span class="p">,</span>
+<span class="mf">106.86598817995558</span><span class="p">,</span> <span class="mf">1434.6487389346337</span><span class="p">,</span>
+<span class="mf">108.38398657859341</span><span class="p">,</span> <span class="mf">1311.7123868462745</span><span class="p">,</span>
+<span class="mf">109.86876744317898</span><span class="p">,</span> <span class="mf">1234.516977482293</span><span class="p">,</span>
+<span class="mf">111.3697517556002</span><span class="p">,</span> <span class="mf">1245.7754702806433</span><span class="p">,</span>
+<span class="mf">112.87897564379972</span><span class="p">,</span> <span class="mf">1179.0326457113374</span><span class="p">,</span>
+<span class="mf">114.3882702788114</span><span class="p">,</span> <span class="mf">1014.8814679839438</span><span class="p">,</span>
+<span class="mf">115.88820952245558</span><span class="p">,</span> <span class="mf">1036.0332785385408</span><span class="p">,</span>
+<span class="mf">117.41276837828192</span><span class="p">,</span> <span class="mf">969.2273521057148</span><span class="p">,</span>
+<span class="mf">118.89043313168807</span><span class="p">,</span> <span class="mf">873.4079137564681</span><span class="p">,</span>
+<span class="mf">120.4574933926158</span><span class="p">,</span> <span class="mf">818.081657004803</span><span class="p">,</span>
+<span class="mf">121.92304751778124</span><span class="p">,</span> <span class="mf">836.9094993342806</span><span class="p">,</span>
+<span class="mf">123.39214903526977</span><span class="p">,</span> <span class="mf">822.1553610051167</span><span class="p">,</span>
+<span class="mf">124.95333817131085</span><span class="p">,</span> <span class="mf">822.4090865137866</span><span class="p">,</span>
+<span class="mf">126.42222423057693</span><span class="p">,</span> <span class="mf">750.576575836975</span><span class="p">,</span>
+<span class="mf">127.90427602310393</span><span class="p">,</span> <span class="mf">672.3445439970408</span><span class="p">,</span>
+<span class="mf">129.47157601294538</span><span class="p">,</span> <span class="mf">614.7488535289381</span><span class="p">,</span>
+<span class="mf">130.9440004560878</span><span class="p">,</span> <span class="mf">568.5376856762446</span><span class="p">,</span>
+<span class="mf">132.40659813559245</span><span class="p">,</span> <span class="mf">556.2351700746051</span><span class="p">,</span>
+<span class="mf">133.92034607358522</span><span class="p">,</span> <span class="mf">591.772599132705</span><span class="p">,</span>
+<span class="mf">135.44382534524019</span><span class="p">,</span> <span class="mf">535.1867361891088</span><span class="p">,</span>
+<span class="mf">136.9596810587593</span><span class="p">,</span> <span class="mf">550.770556931624</span><span class="p">,</span>
+<span class="mf">138.43649676339962</span><span class="p">,</span> <span class="mf">403.87073671190865</span><span class="p">,</span>
+<span class="mf">139.95034161930397</span><span class="p">,</span> <span class="mf">438.490676207407</span><span class="p">,</span>
+<span class="mf">141.41347902388932</span><span class="p">,</span> <span class="mf">421.07876317492423</span><span class="p">,</span>
+<span class="mf">142.9923105700799</span><span class="p">,</span> <span class="mf">372.55375964177597</span><span class="p">,</span>
+<span class="mf">144.45095529103241</span><span class="p">,</span> <span class="mf">397.67258500011167</span><span class="p">,</span>
+<span class="mf">145.97321262165863</span><span class="p">,</span> <span class="mf">352.654430461796</span><span class="p">,</span>
+<span class="mf">147.49500474630946</span><span class="p">,</span> <span class="mf">312.0402258239674</span><span class="p">,</span>
+<span class="mf">148.95322733591394</span><span class="p">,</span> <span class="mf">341.1552279438565</span><span class="p">,</span>
+<span class="mf">150.41645519721672</span><span class="p">,</span> <span class="mf">322.88699131961243</span><span class="p">,</span>
+<span class="mf">151.98976888364348</span><span class="p">,</span> <span class="mf">326.59772688391195</span><span class="p">,</span>
+<span class="mf">153.45185095985872</span><span class="p">,</span> <span class="mf">319.1762557553127</span><span class="p">,</span>
+<span class="mf">154.86002513994268</span><span class="p">,</span> <span class="mf">290.0204763215304</span><span class="p">]</span>
+<span class="n">ndata</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;data &quot;</span><span class="p">,</span> <span class="n">ndata</span><span class="p">)</span>
+<span class="n">mass</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)]</span>   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ndata</span><span class="o">/</span><span class="mi">2</span><span class="p">))])</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ndata</span><span class="o">/</span><span class="mi">2</span><span class="p">))])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;mass&#39;</span> <span class="p">:</span> <span class="n">mass</span><span class="p">,</span> <span class="s1">&#39;counts&#39;</span><span class="p">:</span> <span class="n">counts</span><span class="p">})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data  70
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mass</th>
+      <th>counts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>105.248813</td>
+      <td>1482.354711</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>105.946948</td>
+      <td>1503.662077</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>106.865988</td>
+      <td>1434.648739</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>108.383987</td>
+      <td>1311.712387</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>109.868767</td>
+      <td>1234.516977</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>111.369752</td>
+      <td>1245.775470</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>112.878976</td>
+      <td>1179.032646</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>114.388270</td>
+      <td>1014.881468</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>115.888210</td>
+      <td>1036.033279</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>117.412768</td>
+      <td>969.227352</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>118.890433</td>
+      <td>873.407914</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>120.457493</td>
+      <td>818.081657</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>121.923048</td>
+      <td>836.909499</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>123.392149</td>
+      <td>822.155361</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>124.953338</td>
+      <td>822.409087</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>126.422224</td>
+      <td>750.576576</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>127.904276</td>
+      <td>672.344544</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>129.471576</td>
+      <td>614.748854</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>130.944000</td>
+      <td>568.537686</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>132.406598</td>
+      <td>556.235170</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>133.920346</td>
+      <td>591.772599</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>135.443825</td>
+      <td>535.186736</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>136.959681</td>
+      <td>550.770557</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>138.436497</td>
+      <td>403.870737</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>139.950342</td>
+      <td>438.490676</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>141.413479</td>
+      <td>421.078763</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>142.992311</td>
+      <td>372.553760</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>144.450955</td>
+      <td>397.672585</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>145.973213</td>
+      <td>352.654430</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>147.495005</td>
+      <td>312.040226</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>148.953227</td>
+      <td>341.155228</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>150.416455</td>
+      <td>322.886991</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>151.989769</td>
+      <td>326.597727</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>153.451851</td>
+      <td>319.176256</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>154.860025</td>
+      <td>290.020476</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">56</span><span class="o">/</span><span class="n">_pmdccc97ljb_l3v3s6gkrxm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1938</span><span class="o">/</span><span class="mf">2440497874.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/pyplot.py</span> in <span class="ni">scatter</span><span class="nt">(x, y, s, c, marker, cmap, norm, vmin, vmax, alpha, linewidths, edgecolors, plotnonfinite, data, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2817</span>         <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2818</span>         <span class="n">edgecolors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plotnonfinite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2819</span>     <span class="n">__ret</span> <span class="o">=</span> <span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2820</span>         <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2821</span>         <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="n">linewidths</span><span class="p">,</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py</span> in <span class="ni">inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1410</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1411</span>         <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1412</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">sanitize_sequence</span><span class="p">,</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1413</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1414</span>         <span class="n">bound</span> <span class="o">=</span> <span class="n">new_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_axes.py</span> in <span class="ni">scatter</span><span class="nt">(self, x, y, s, c, marker, cmap, norm, vmin, vmax, alpha, linewidths, edgecolors, plotnonfinite, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4360</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4361</span>         <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span> <span class="o">!=</span> <span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">4362</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;x and y must be the same size&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4363</span> 
+<span class="g g-Whitespace">   </span><span class="mi">4364</span>         <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">ValueError</span>: x and y must be the same size
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_4_1.png" src="_images/ta_exercise_Hgg_4_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">experiment</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nbkg</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">,</span> <span class="n">nsig</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="n">m0</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">m1</span> <span class="o">=</span> <span class="mi">150</span><span class="p">,</span> <span class="n">tau</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">msig</span> <span class="o">=</span> <span class="mi">125</span><span class="p">,</span> <span class="n">ssig</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; generate data from a exponential + a gaussian signal</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">exps</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+        <span class="n">nb</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">nbkg</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">xs</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="n">m0</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">tau</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">nb</span><span class="p">)</span>
+        <span class="n">ns</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">nsig</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">ys</span> <span class="o">=</span> <span class="n">msig</span> <span class="o">+</span> <span class="n">ssig</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">ns</span><span class="p">)</span>
+        <span class="n">zs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">ys</span><span class="p">))</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">zs</span><span class="p">)</span>
+        <span class="n">sel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">zs</span> <span class="o">&gt;=</span> <span class="n">m0</span><span class="p">,</span> <span class="n">zs</span> <span class="o">&lt;</span> <span class="n">m1</span><span class="p">)</span>
+        <span class="n">exps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zs</span><span class="p">[</span><span class="n">sel</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span> <span class="k">return</span> <span class="n">exps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">exps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zs</span> <span class="o">=</span> <span class="n">experiment</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">zs</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ta_exercise_Hgg_6_0.png" src="_images/ta_exercise_Hgg_6_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xs</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.006821440375151818, 30.344527513786314)
+30.351348954161466
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binned_exponll</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">bins</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">exponll</span><span class="p">(</span><span class="n">mu</span><span class="p">):</span>
+        <span class="n">xx</span>  <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">loc</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">mu</span><span class="p">)</span> <span class="o">-</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">loc</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">mu</span><span class="p">)</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">xx</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">val</span>
+    <span class="k">return</span> <span class="n">exponll</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llu</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tau</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">loc</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">tau</span><span class="p">))</span> 
+<span class="n">llb</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tau</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">loc</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">tau</span><span class="p">))</span>
+<span class="n">taus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">taus</span><span class="p">,</span> <span class="p">[</span><span class="n">llu</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span> <span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">taus</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">taus</span><span class="p">,</span> <span class="p">[</span><span class="n">llb</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span> <span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">taus</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbfb89b4fd0&gt;]
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_9_1.png" src="_images/ta_exercise_Hgg_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">mu</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">mu</span><span class="p">))</span>
+<span class="n">taus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">taus</span><span class="p">,</span> <span class="p">[</span><span class="n">ll</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span> <span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">taus</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbfdb85a970&gt;]
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_10_1.png" src="_images/ta_exercise_Hgg_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ccounts</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">1000000</span><span class="p">)</span>
+<span class="n">centers</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">dbin</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#plt.scatter(centers, counts)</span>
+<span class="n">xllbin</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">mu</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ccounts</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">mu</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">taus</span><span class="p">,</span> <span class="p">[</span><span class="n">xllbin</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span> <span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">taus</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dbin</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5e-05
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_11_1.png" src="_images/ta_exercise_Hgg_11_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">experiment</span><span class="p">():</span>
+    <span class="n">mass0</span>  <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nbkg</span>   <span class="o">=</span> <span class="mi">30000</span>
+    <span class="n">nsig</span>   <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">tau</span>    <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">mhiggs</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="n">sigma</span>  <span class="o">=</span> <span class="mf">2.</span>
+    <span class="n">rv_exp</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span>
+    <span class="n">xmass</span>  <span class="o">=</span> <span class="n">mass0</span> <span class="o">+</span> <span class="n">rv_exp</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">nbkg</span><span class="p">)</span>
+    <span class="n">ymass</span>  <span class="o">=</span> <span class="n">mhiggs</span> <span class="o">+</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span> <span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span>  <span class="n">nsig</span><span class="p">)</span>
+    <span class="n">cc</span>     <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">xmass</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">ymass</span><span class="p">),</span> <span class="nb">range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">35</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cc</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span> <span class="o">=</span> <span class="n">experiment</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ta_exercise_Hgg_13_0.png" src="_images/ta_exercise_Hgg_13_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contents</span> <span class="o">=</span> <span class="n">cc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">bins</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cc</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">bins</span>     <span class="o">=</span> <span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">contents</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">bins</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35 35
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa5b29562e0&gt;
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_15_1.png" src="_images/ta_exercise_Hgg_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_loglike</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">counts</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">loglike</span><span class="p">(</span><span class="n">mu</span><span class="p">):</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">mu</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">vals</span>
+    <span class="k">return</span> <span class="n">loglike</span>
+
+<span class="k">def</span> <span class="nf">tau_hat</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">counts</span><span class="p">):</span>
+    <span class="n">that</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span> <span class="o">*</span> <span class="n">bins</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">that</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">that</span> <span class="o">=</span> <span class="n">tau_hat</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">that</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.564729388258797
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="o">=</span> <span class="n">get_loglike</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span>
+<span class="n">_2ll</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">mu</span> <span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">ll</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ll</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+<span class="n">taus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">taus</span><span class="p">,</span> <span class="p">[</span><span class="n">_2ll</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span> <span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">taus</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-inf
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa5b2989520&gt;]
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_18_2.png" src="_images/ta_exercise_Hgg_18_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_pdf</span><span class="p">(</span><span class="n">mu</span><span class="p">):</span>
+    <span class="n">nbkg</span><span class="p">,</span> <span class="n">nsig</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">mu</span>
+    <span class="n">fbkg</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">*</span><span class="n">nbkg</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">nbkg</span> <span class="o">+</span> <span class="n">nsig</span><span class="p">)</span>
+    <span class="n">fsig</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">fbkg</span>
+    <span class="k">def</span> <span class="nf">_pdf</span><span class="p">(</span><span class="n">xx</span><span class="p">):</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+        <span class="n">val</span>  <span class="o">=</span>  <span class="n">fbkg</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">x0</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">tau</span><span class="p">)</span>
+        <span class="n">val</span> <span class="o">+=</span>  <span class="n">fsig</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span> <span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">val</span>
+    <span class="k">return</span> <span class="n">_pdf</span>
+
+    
+<span class="k">def</span> <span class="nf">get_extloglike</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">counts</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_ell</span><span class="p">(</span><span class="n">mu</span><span class="p">):</span>
+        <span class="n">nbkg</span><span class="p">,</span> <span class="n">nsig</span> <span class="o">=</span> <span class="n">mu</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">_xpdf</span> <span class="o">=</span> <span class="n">get_pdf</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+        <span class="n">xpdf</span> <span class="o">=</span> <span class="n">_xpdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">lpx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">xpdf</span><span class="p">))</span>
+        <span class="n">ncounts</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">))</span>
+        <span class="n">lpn</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">nbkg</span><span class="o">+</span><span class="n">nsig</span><span class="p">,</span> <span class="n">ncounts</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">ncounts</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">lpn</span><span class="p">)):</span> <span class="n">lpn</span> <span class="o">=</span> <span class="mf">1e-320</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">lpx</span><span class="p">)):</span> <span class="n">lpn</span> <span class="o">=</span> <span class="mf">1e-320</span>
+        <span class="k">return</span> <span class="n">lpx</span> <span class="o">+</span> <span class="n">lpn</span>
+    <span class="k">return</span> <span class="n">_ell</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tau</span> <span class="o">=</span> <span class="mf">30.</span>
+<span class="n">hmass</span> <span class="o">=</span> <span class="mi">125</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">2.</span>
+<span class="n">sel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">mass</span> <span class="o">&lt;</span> <span class="mi">108</span><span class="p">,</span> <span class="n">mass</span> <span class="o">&gt;</span> <span class="mi">145</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">mass</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span>  <span class="n">tau</span><span class="p">)</span>
+<span class="n">ncounts</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">sel</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">pdf</span><span class="p">(</span><span class="n">mass</span><span class="p">)))</span>
+<span class="n">factor</span> <span class="o">=</span> <span class="n">ncounts</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">pdf</span><span class="p">(</span><span class="n">mass</span><span class="p">[</span><span class="n">sel</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span>  <span class="n">factor</span> <span class="o">*</span> <span class="n">pdf</span><span class="p">(</span><span class="n">mass</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mass</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">counts</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5883110196478687
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa5d0299df0&gt;
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_20_2.png" src="_images/ta_exercise_Hgg_20_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ell</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">mu</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">mass</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">mu</span><span class="p">))</span>
+<span class="c1">#ell(tau)</span>
+<span class="n">taus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">taus</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">taus</span><span class="p">,</span> <span class="p">[</span><span class="n">ell</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span> <span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">taus</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa5b117f5e0&gt;]
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_21_1.png" src="_images/ta_exercise_Hgg_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_pdf</span><span class="p">(</span><span class="n">mu</span><span class="p">):</span>
+    <span class="n">nbkg</span><span class="p">,</span> <span class="n">nsig</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">mu</span>
+    <span class="n">fbkg</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">*</span><span class="n">nbkg</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">nbkg</span> <span class="o">+</span> <span class="n">nsig</span><span class="p">)</span>
+    <span class="n">fsig</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">fbkg</span>
+    <span class="k">def</span> <span class="nf">_pdf</span><span class="p">(</span><span class="n">xx</span><span class="p">):</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+        <span class="n">val</span>  <span class="o">=</span>  <span class="n">fbkg</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">x0</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">tau</span><span class="p">)</span>
+        <span class="n">val</span> <span class="o">+=</span>  <span class="n">fsig</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span> <span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">val</span>
+    <span class="k">return</span> <span class="n">_pdf</span>
+
+<span class="k">def</span> <span class="nf">get_pdf</span><span class="p">(</span><span class="n">mu</span><span class="p">):</span>
+    <span class="n">nbkg</span><span class="p">,</span> <span class="n">nsig</span><span class="p">,</span> <span class="n">tau</span> <span class="o">=</span> <span class="n">mu</span>
+    <span class="n">fbkg</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">*</span><span class="n">nbkg</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">nbkg</span> <span class="o">+</span> <span class="n">nsig</span><span class="p">)</span>
+    <span class="n">fsig</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">fbkg</span>
+    <span class="k">def</span> <span class="nf">_pdf</span><span class="p">(</span><span class="n">xx</span><span class="p">):</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+        <span class="n">val</span>  <span class="o">=</span>  <span class="n">fbkg</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">x0</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">tau</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">val</span>
+    <span class="k">return</span> <span class="n">_pdf</span>
+
+    
+<span class="k">def</span> <span class="nf">get_extloglike</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">counts</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_ell</span><span class="p">(</span><span class="n">mu</span><span class="p">):</span>
+        <span class="n">nbkg</span><span class="p">,</span> <span class="n">nsig</span> <span class="o">=</span> <span class="n">mu</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">_xpdf</span> <span class="o">=</span> <span class="n">get_pdf</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+        <span class="n">xpdf</span> <span class="o">=</span> <span class="n">_xpdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">lpx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">xpdf</span><span class="p">))</span>
+        <span class="n">ncounts</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">))</span>
+        <span class="n">lpn</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">nbkg</span><span class="o">+</span><span class="n">nsig</span><span class="p">,</span> <span class="n">ncounts</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">ncounts</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">lpn</span><span class="p">)):</span> <span class="n">lpn</span> <span class="o">=</span> <span class="mf">1e-320</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">lpx</span><span class="p">)):</span> <span class="n">lpn</span> <span class="o">=</span> <span class="mf">1e-320</span>
+        <span class="k">return</span> <span class="n">lpx</span> <span class="o">+</span> <span class="n">lpn</span>
+    <span class="k">return</span> <span class="n">_ell</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbkg</span>    <span class="o">=</span> <span class="mi">25200</span>   <span class="c1"># number of bkg events</span>
+<span class="n">nhiggs</span>  <span class="o">=</span>  <span class="mf">500.</span>   <span class="c1"># number of signal events</span>
+<span class="n">tau</span>     <span class="o">=</span>  <span class="mf">30.</span>    <span class="c1"># exponential </span>
+<span class="n">hmass</span>   <span class="o">=</span> <span class="mi">125</span>     <span class="c1"># higgs mass</span>
+<span class="n">sigma</span>   <span class="o">=</span> <span class="mi">3</span>       <span class="c1"># mass resolution</span>
+<span class="n">mu</span>      <span class="o">=</span> <span class="p">(</span><span class="n">nbkg</span><span class="p">,</span> <span class="n">nhiggs</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">hmass</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdf</span> <span class="o">=</span> <span class="n">get_pdf</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">factor</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">ncounts</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<span class="n">dmass</span>   <span class="o">=</span> <span class="n">mass</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">mass</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">ncounts</span> <span class="o">*</span> <span class="n">dmass</span> <span class="o">*</span> <span class="n">pdf</span><span class="p">(</span><span class="n">mass</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa6051f0f40&gt;
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_24_1.png" src="_images/ta_exercise_Hgg_24_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ell</span> <span class="o">=</span> <span class="n">get_extloglike</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+<span class="n">_2ell</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">mu</span> <span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">ell</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_2ell</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">_2ell</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Nelder-Mead&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[1.57359456e+04, 9.98705380e+03, 8.83774509e+00, 1.34702348e+02,
+        1.11164980e+01],
+       [1.57359457e+04, 9.98705377e+03, 8.83774519e+00, 1.34702348e+02,
+        1.11164980e+01],
+       [1.57359456e+04, 9.98705375e+03, 8.83774517e+00, 1.34702348e+02,
+        1.11164980e+01],
+       [1.57359456e+04, 9.98705377e+03, 8.83774516e+00, 1.34702348e+02,
+        1.11164980e+01],
+       [1.57359455e+04, 9.98705384e+03, 8.83774512e+00, 1.34702348e+02,
+        1.11164980e+01],
+       [1.57359456e+04, 9.98705374e+03, 8.83774517e+00, 1.34702348e+02,
+        1.11164980e+01]]), array([193526.98577192, 193526.98577192, 193526.98577192, 193526.98577192,
+       193526.98577192, 193526.98577192]))
+           fun: 193526.98577192405
+       message: &#39;Optimization terminated successfully.&#39;
+          nfev: 865
+           nit: 524
+        status: 0
+       success: True
+             x: array([1.57359456e+04, 9.98705380e+03, 8.83774509e+00, 1.34702348e+02,
+       1.11164980e+01])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muhat</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+<span class="n">muhat</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">muhat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">muhat</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25722.999433006426
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hatpdf</span> <span class="o">=</span> <span class="n">get_pdf</span><span class="p">(</span><span class="n">muhat</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">ncounts</span> <span class="o">*</span> <span class="n">dmass</span> <span class="o">*</span> <span class="n">hatpdf</span><span class="p">(</span><span class="n">mass</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa5b0e5edf0&gt;
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_29_1.png" src="_images/ta_exercise_Hgg_29_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mass</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mass</span><span class="p">)</span>
+<span class="n">dmass</span> <span class="o">=</span> <span class="n">mass</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">mass</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">tau</span>  <span class="o">=</span> <span class="mf">10000.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">ncounts</span> <span class="o">*</span> <span class="n">dmass</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="o">*</span><span class="n">mass</span><span class="o">/</span><span class="n">tau</span><span class="p">)</span><span class="o">/</span><span class="n">tau</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa5e1725850&gt;
+</pre></div>
+</div>
+<img alt="_images/ta_exercise_Hgg_30_1.png" src="_images/ta_exercise_Hgg_30_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ell</span> <span class="o">=</span> <span class="n">get_extloglike</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+<span class="n">ell</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-435865.4823652418
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_2ell</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">mu</span> <span class="p">:</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">ell</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">_2ell</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Nelder-Mead&#39;</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/56/_pmdccc97ljb_l3v3s6gkrxm0000gn/T/ipykernel_1938/3153047749.py:16: RuntimeWarning: invalid value encountered in log
+  lpx = np.sum(counts * np.log(xpdf))
+/var/folders/56/_pmdccc97ljb_l3v3s6gkrxm0000gn/T/ipykernel_1938/3153047749.py:3: RuntimeWarning: divide by zero encountered in double_scalars
+  fbkg = 1.*nbkg/float(nbkg + nsig)
+/var/folders/56/_pmdccc97ljb_l3v3s6gkrxm0000gn/T/ipykernel_1938/3153047749.py:7: RuntimeWarning: invalid value encountered in add
+  val +=  fsig * stats.norm .pdf(xx, mean, sigma)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[-9.31642852e+02,  9.31642852e+02,  7.97180795e-02,
+         1.22911297e+02,  6.05122344e+00],
+       [-9.31642852e+02,  9.31642852e+02,  7.97180795e-02,
+         1.22911297e+02,  6.05122344e+00],
+       [-9.31642852e+02,  9.31642852e+02,  7.97180795e-02,
+         1.22911297e+02,  6.05122344e+00],
+       [-9.31642852e+02,  9.31642852e+02,  7.97180795e-02,
+         1.22911297e+02,  6.05122344e+00],
+       [-9.31642852e+02,  9.31642852e+02,  7.97180795e-02,
+         1.22911297e+02,  6.05122344e+00],
+       [-9.31642852e+02,  9.31642852e+02,  7.97180795e-02,
+         1.22911297e+02,  6.05122344e+00]]), array([-1581773.6509271 , -1581773.65092578, -1581773.65092565,
+       -1581773.65092564, -1581773.65092562, -1581773.65092463]))
+           fun: -1581773.6509271017
+       message: &#39;Optimization terminated successfully.&#39;
+          nfev: 746
+           nit: 350
+        status: 0
+       success: True
+             x: array([-9.31642852e+02,  9.31642852e+02,  7.97180795e-02,  1.22911297e+02,
+        6.05122344e+00])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-426982.8936147059, -inf)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By José Ángel Hernando Morata<br/>
+  
+      &copy; Copyright USC - J.A. Hernando - 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

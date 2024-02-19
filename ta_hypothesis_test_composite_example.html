@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hypothesis test and regression - practical example &#8212; Statistics for Particle Physics</title>
+    <title>Hypothesis testing: a practical example &#8212; Statistics for Particle Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,6 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TA Exercise: Higgs to gamma gamma" href="ta_exercise_hgg_hcomposite.html" />
+    <link rel="prev" title="Hypothesis testing, composite case" href="ta_hypothesis_test_composite.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -109,11 +111,11 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Neutrinos - USC
+                    Introduction
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="ta_basic_concepts.html">
    Revisiting the basic concepts
@@ -132,6 +134,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="ta_hypothesis_test_composite.html">
    Hypothesis testing, composite case
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Hypothesis testing: a practical example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_exercise_hgg_hcomposite.html">
+   TA Exercise: Higgs to gamma gamma
   </a>
  </li>
 </ul>
@@ -379,7 +391,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Hypothesis test and regression - practical example</h1>
+                <h1>Hypothesis testing: a practical example</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -411,8 +423,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="hypothesis-test-and-regression-practical-example">
-<h1>Hypothesis test and regression - practical example<a class="headerlink" href="#hypothesis-test-and-regression-practical-example" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="hypothesis-testing-a-practical-example">
+<h1>Hypothesis testing: a practical example<a class="headerlink" href="#hypothesis-testing-a-practical-example" title="Permalink to this heading">#</a></h1>
 <p><em>Author: Jose A. Hernando</em>, February 2020</p>
 <p><em>Instituto Galego de Altas Enerxías. Universidade de Santiago de Compostela, Spain.</em></p>
 <div class="cell docutils container">
@@ -424,7 +436,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Fri Feb 11 11:06:44 2022
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Wed Feb 14 18:51:15 2024
 </pre></div>
 </div>
 </div>
@@ -492,7 +504,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu-hat(x0) : 45.24444580078125
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mu-hat(x0) : 43.3502197265625
 </pre></div>
 </div>
 </div>
@@ -533,7 +545,7 @@ t_\mu(x_0) = - 2 \ln \mathcal{L}(x_0| \mu) + 2 \ln \mathcal{L}(x_0 |\hat{\mu}(x_
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [38.39692384 52.76110904] at  68 % CL
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [36.58333135 50.79112509] at  68 % CL
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_12_1.png" src="_images/ta_hypothesis_test_composite_example_12_1.png" />
@@ -601,8 +613,8 @@ t_\mu(x) = -2 \ln \frac{\mathcal{L}(x | \mu)}{\mathcal{L}(x | \hat{\mu}(x))}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  45.24444580078125 and mu0  0.0
- tmu  0.0  of x0 at mu  45.24444580078125
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  43.3502197265625 and mu0  0.0
+ tmu  0.0  of x0 at mu  43.3502197265625
  p-value : 1.0
 </pre></div>
 </div>
@@ -618,9 +630,9 @@ t_\mu(x) = -2 \ln \frac{\mathcal{L}(x | \mu)}{\mathcal{L}(x | \hat{\mu}(x))}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  38.39692384375289 and mu0  0.0
- tmu  0.9889464814776261  of x0 at mu  38.39692384375289
- p-value : 0.318
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  30.18641673841739 and mu0  0.0
+ tmu  0.988946481478024  of x0 at mu  30.18641673841739
+ p-value : 0.298
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_19_1.png" src="_images/ta_hypothesis_test_composite_example_19_1.png" />
@@ -635,9 +647,9 @@ t_\mu(x) = -2 \ln \frac{\mathcal{L}(x | \mu)}{\mathcal{L}(x | \hat{\mu}(x))}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  52.76110903943774 and mu0  0.0
- tmu  0.9889464814779672  of x0 at mu  52.76110903943774
- p-value : 0.292
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  50.79112508809302 and mu0  0.0
+ tmu  0.9889464814784787  of x0 at mu  50.79112508809302
+ p-value : 0.316
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_21_1.png" src="_images/ta_hypothesis_test_composite_example_21_1.png" />
@@ -653,9 +665,9 @@ t_\mu(x) = -2 \ln \frac{\mathcal{L}(x | \mu)}{\mathcal{L}(x | \hat{\mu}(x))}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  45.24444580078125 and mu0  0.0
-chi2  0.9905803532526334
-p-value mean : 0.5071332891905503 ; std * sqrt(12.) : 0.9681326866812087
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  43.3502197265625 and mu0  0.0
+chi2  0.9938428007358492
+p-value mean : 0.48534755463293366 ; std * sqrt(12.) : 1.0322193414580272
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_23_1.png" src="_images/ta_hypothesis_test_composite_example_23_1.png" />
@@ -685,7 +697,7 @@ p-value mean : 0.5071332891905503 ; std * sqrt(12.) : 0.9681326866812087
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [38.39692384 52.76110904] at  68 % CL
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [30.18641674 43.25232932] at  68 % CL
 p0 value    : 0.0
 </pre></div>
 </div>
@@ -703,7 +715,7 @@ p0 value    : 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bkg events : 45 signal events : 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bkg events : 50 signal events : 3
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_28_1.png" src="_images/ta_hypothesis_test_composite_example_28_1.png" />
@@ -728,10 +740,10 @@ p0 value    : 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>events in control, signal region : 39.0 6.0
-events in control region/tau     : 1.95
-parbest(x0) : [ 4.0499621   1.94999529 20.        ]
-muhat(x0)   : 4.049962096009588
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>events in control, signal region : 49.0 4.0
+events in control region/tau     : 2.45
+parbest(x0) : [ 1.55002715  2.45000078 20.        ]
+muhat(x0)   : 1.5500271546438305
 </pre></div>
 </div>
 </div>
@@ -745,7 +757,7 @@ muhat(x0)   : 4.049962096009588
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [1.90514325 6.8413611 ] at  68 % CL
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [-0.16798032  3.90356446] at  68 % CL
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_30_1.png" src="_images/ta_hypothesis_test_composite_example_30_1.png" />
@@ -759,9 +771,9 @@ muhat(x0)   : 4.049962096009588
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  1.9051432518957419 and mu0  0.0
- tmu  0.9889464814780222  of x0 at mu  1.9051432518957419
- p-value : 0.346
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  0.0 and mu0  0.0
+ tmu  0.7754168603462759  of x0 at mu  0.0
+ p-value : 0.148
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_31_1.png" src="_images/ta_hypothesis_test_composite_example_31_1.png" />
@@ -774,9 +786,9 @@ muhat(x0)   : 4.049962096009588
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  6.841361103919364 and mu0  0.0
- tmu  0.9889464814780258  of x0 at mu  6.841361103919364
- p-value : 0.33
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  3.9035644580507207 and mu0  0.0
+ tmu  0.9889464814780222  of x0 at mu  3.9035644580507207
+ p-value : 0.306
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_32_1.png" src="_images/ta_hypothesis_test_composite_example_32_1.png" />
@@ -790,9 +802,9 @@ muhat(x0)   : 4.049962096009588
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  4.049962096009588 and mu0  0.0
-chi2  1.1015709192255887
-p-value mean : 0.5260136723647663 ; std * sqrt(12.) : 0.9984699252128535
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> generating 500  events with mu  1.5500271546438305 and mu0  0.0
+chi2  0.940974813991467
+p-value mean : 0.5156562355925663 ; std * sqrt(12.) : 0.9486683108935456
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_33_1.png" src="_images/ta_hypothesis_test_composite_example_33_1.png" />
@@ -806,8 +818,8 @@ p-value mean : 0.5260136723647663 ; std * sqrt(12.) : 0.9984699252128535
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [1.90514325 6.8413611 ] at  68 % CL
-p0 value    : 0.012679518673491708
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central CI  : [-0.16798032  3.90356446] at  68 % CL
+p0 value    : 0.18927325108432191
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_composite_example_34_1.png" src="_images/ta_hypothesis_test_composite_example_34_1.png" />
@@ -847,6 +859,20 @@ p0 value    : 0.012679518673491708
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ta_hypothesis_test_composite.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Hypothesis testing, composite case</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ta_exercise_hgg_hcomposite.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TA Exercise: Higgs to gamma gamma</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

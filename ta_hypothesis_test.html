@@ -136,6 +136,16 @@ const thebe_selector_output = ".output, .cell_output"
    Hypothesis testing, composite case
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_hypothesis_test_composite_example.html">
+   Hypothesis testing: a practical example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ta_exercise_hgg_hcomposite.html">
+   TA Exercise: Higgs to gamma gamma
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -505,7 +515,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Mon Feb 27 17:23:40 2023
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Last Execution  Mon Feb  5 18:04:11 2024
 </pre></div>
 </div>
 </div>
@@ -540,22 +550,22 @@ title="Print to PDF"
 <p>Can we exclude <span class="math notranslate nohighlight">\(H_1\)</span>? At what level?</p>
 <p>Can claim an <em>observation</em> or a <em>discovery</em> of New Physics?</p>
 <p>We will try to solve these questions in this lecture.</p>
-<p>Look at the following simple example, <span class="math notranslate nohighlight">\(H_0, H_1\)</span> are both gaussians with sigma one, <span class="math notranslate nohighlight">\(H_0\)</span> has mean zero and <span class="math notranslate nohighlight">\(H_1\)</span> has mean one.</p>
+<p>Look at the following simple example, <span class="math notranslate nohighlight">\(H_0, H_1\)</span> are both gaussians with sigma one, <span class="math notranslate nohighlight">\(H_0\)</span> has mean zero and <span class="math notranslate nohighlight">\(H_1\)</span> has mean <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p>Given an observation, <span class="math notranslate nohighlight">\(x_0\)</span>, data agrees more <span class="math notranslate nohighlight">\(H_0\)</span> or with <span class="math notranslate nohighlight">\(H_1\)</span>?</p>
-<p><strong>Explora</strong> in the next Python cell. Execute few events. See where the data, <span class="math notranslate nohighlight">\(x_0\)</span>, falls along the axis. Move the gaussians appart, change their widths.</p>
+<p><em>Explore</em> In the next Python cell, execute few events, See where the data, <span class="math notranslate nohighlight">\(x_0\)</span>, falls along the axis. Move the gaussians appart, change their widths.</p>
 <p>(Forget for the moment the printed values, except for the observed data)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">mutrue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">mutrue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">False</span>
 <span class="n">httoys</span><span class="o">.</span><span class="n">gaussian</span><span class="p">(</span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">mutrue</span> <span class="o">=</span> <span class="n">mutrue</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [0.04775964]
-H0 p-value    : 0.48095390
-H1 p-value    : 0.00157739
-CLs           : 0.00303901 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [-0.73917088]
+H0 p-value    : 0.77009838
+H1 p-value    : 0.00000000
+CLs           : 0.00000002 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_5_1.png" src="_images/ta_hypothesis_test_5_1.png" />
@@ -647,19 +657,19 @@ and <span class="math notranslate nohighlight">\(H_1\)</span> again a gaussian d
 <h3>A counting experiment<a class="headerlink" href="#a-counting-experiment" title="Permalink to this heading">#</a></h3>
 <p>Several experiments are called <strong>counting experiments</strong>, they search for a signal, expecting a given number of events <span class="math notranslate nohighlight">\(s\)</span>, over a background level, <span class="math notranslate nohighlight">\(b\)</span>. This is a first approximation for a Rare Event Search.</p>
 <p>The distribution of the data follows a poisson distribution with mean, <span class="math notranslate nohighlight">\(b\)</span>, in the case of only background and a poission distribution with mean <span class="math notranslate nohighlight">\(b+s\)</span> in the presence of signal.</p>
-<p><strong>Explore</strong> in the following cell how the distributions changes with <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(s\)</span>, and how the result of the experiment changes depending on <span class="math notranslate nohighlight">\(data\)</span> .</p>
+<p><strong>Explore</strong> in the following cell how the distributions changes with <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(s\)</span>, and how the result of the experiment changes depending on <span class="math notranslate nohighlight">\(data\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">mutrue</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">mutrue</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="kc">True</span>
 <span class="n">httoys</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">mu0</span><span class="p">,</span> <span class="n">mu1</span><span class="p">,</span> <span class="n">mutrue</span> <span class="o">=</span> <span class="n">mutrue</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : 1
-H0 p-value    : 0.95021293
-H1 p-value    : 0.00049940
-CLs           : 0.00250768 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : 6
+H0 p-value    : 0.08391794
+H1 p-value    : 0.13014142
+CLs           : 0.13465346 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_18_1.png" src="_images/ta_hypothesis_test_18_1.png" />
@@ -692,8 +702,8 @@ CLs           : 0.00250768
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q0s</span><span class="p">,</span> <span class="n">q1s</span> <span class="o">=</span> <span class="n">two_poisson</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plt_test_stats</span><span class="p">(</span><span class="n">q0s</span><span class="p">,</span> <span class="n">q1s</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">));</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q0s</span><span class="p">,</span> <span class="n">q1s</span> <span class="o">=</span> <span class="n">two_poisson</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plt_test_stats</span><span class="p">(</span><span class="n">q0s</span><span class="p">,</span> <span class="n">q1s</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -804,10 +814,10 @@ q(x) &lt; k
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [-0.55520119]
-H0 p-value    : 0.71062147
-H1 p-value    : 0.00018884
-CLs           : 0.00065259 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [0.68410232]
+H0 p-value    : 0.24695528
+H1 p-value    : 0.01028193
+CLs           : 0.01365381 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_35_1.png" src="_images/ta_hypothesis_test_35_1.png" />
@@ -835,11 +845,11 @@ CLs           : 0.00065259
 <h2>Discovery and rejection<a class="headerlink" href="#discovery-and-rejection" title="Permalink to this heading">#</a></h2>
 <p>We claim:</p>
 <ul class="simple">
-<li><p><strong>discovery</strong> (evidency) of <span class="math notranslate nohighlight">\(H_1\)</span> if the <span class="math notranslate nohighlight">\(H_0\)</span> p-value (<span class="math notranslate nohighlight">\(\alpha\)</span>) is lower that <span class="math notranslate nohighlight">\(2.87 \times 10^{-7}\)</span>, that corresponds to <span class="math notranslate nohighlight">\(Z = 5\)</span>.</p></li>
+<li><p><strong>discovery</strong> or <strong>observation</strong> of <span class="math notranslate nohighlight">\(H_1\)</span> if the <span class="math notranslate nohighlight">\(H_0\)</span> p-value (<span class="math notranslate nohighlight">\(\alpha\)</span>) is lower that <span class="math notranslate nohighlight">\(2.87 \times 10^{-7}\)</span>, that corresponds to <span class="math notranslate nohighlight">\(Z = 5\)</span>.</p></li>
 </ul>
 <p>Z-value is the p-value in terms of ‘sigmas’ of a Gaussian distribution!</p>
 <ul class="simple">
-<li><p><strong>observation</strong> of <span class="math notranslate nohighlight">\(H_1\)</span> if the <span class="math notranslate nohighlight">\(H_0\)</span> p-value (<span class="math notranslate nohighlight">\(\alpha\)</span>) is lower than <span class="math notranslate nohighlight">\(0.0027\)</span>, that is <span class="math notranslate nohighlight">\(Z=3\)</span>.</p></li>
+<li><p><strong>evidence</strong> of <span class="math notranslate nohighlight">\(H_1\)</span> if the <span class="math notranslate nohighlight">\(H_0\)</span> p-value (<span class="math notranslate nohighlight">\(\alpha\)</span>) is lower than <span class="math notranslate nohighlight">\(0.0027\)</span>, that is <span class="math notranslate nohighlight">\(Z=3\)</span>.</p></li>
 </ul>
 <p><strong>This is a convention!</strong> And statisticians like to discuss about it!</p>
 <p>Note that <em>discovery</em> means that we <em>false</em> a hypothesis, <span class="math notranslate nohighlight">\(H_0\)</span> (à la Popper)</p>
@@ -877,10 +887,10 @@ Can you exclude <span class="math notranslate nohighlight">\(H_1\)</span> at 90%
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [-1.66800832]
-H0 p-value    : 0.95234296
-H1 p-value    : 0.00001536
-CLs           : 0.00032238 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed data : [1.20318058]
+H0 p-value    : 0.11445322
+H1 p-value    : 0.09734666
+CLs           : 0.10992831 
 </pre></div>
 </div>
 <img alt="_images/ta_hypothesis_test_43_1.png" src="_images/ta_hypothesis_test_43_1.png" />
@@ -888,7 +898,7 @@ CLs           : 0.00032238
 </div>
 <p>We define:</p>
 <ul class="simple">
-<li><p>the <strong>reach</strong> of an experiment as the expected exclusion of <span class="math notranslate nohighlight">\(H_1\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, for the median of the <span class="math notranslate nohighlight">\(g(q | H_0)\)</span> pdf.</p></li>
+<li><p>the <strong>reach</strong> or <strong>sensitivity</strong> of an experiment as the expected exclusion of <span class="math notranslate nohighlight">\(H_1\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, for the median of the <span class="math notranslate nohighlight">\(g(q | H_0)\)</span> pdf.</p></li>
 </ul>
 <p>That is, in the case there is no signal, and we observe data in the median of the <span class="math notranslate nohighlight">\(H_0\)</span> distribution, the reach is the limit we impose in <span class="math notranslate nohighlight">\(H_1\)</span>, its p-value.</p>
 <ul class="simple">
@@ -939,7 +949,7 @@ CLs           : 0.50000014
 <div class="section" id="the-cls-method">
 <h2>The CLs method<a class="headerlink" href="#the-cls-method" title="Permalink to this heading">#</a></h2>
 <p>In some cases the <span class="math notranslate nohighlight">\(H_1\)</span> hypothesis is ‘weak’ compared with <span class="math notranslate nohighlight">\(H_0\)</span> and the distributions of the test statistic <span class="math notranslate nohighlight">\(g(q \, | H_0)\)</span> and <span class="math notranslate nohighlight">\(g(q \, | \,H_1) \)</span> overlap.</p>
-<p><strong>Example</strong>: Consider<span class="math notranslate nohighlight">\(H_0\)</span> as a poisson of <span class="math notranslate nohighlight">\(b\)</span> expected events, <span class="math notranslate nohighlight">\(b=4\)</span>, and the signal <span class="math notranslate nohighlight">\(s=0.5\)</span> events.</p>
+<p><strong>Example</strong>: Consider <span class="math notranslate nohighlight">\(H_0\)</span> as a poisson of <span class="math notranslate nohighlight">\(b\)</span> expected events, <span class="math notranslate nohighlight">\(b=4\)</span>, and the signal <span class="math notranslate nohighlight">\(s=0.5\)</span> events.</p>
 <p><strong>Question</strong>: If we measure <span class="math notranslate nohighlight">\(n \, = \,1\)</span>, the p-value for <span class="math notranslate nohighlight">\(H_1\)</span> is <span class="math notranslate nohighlight">\(0.061\)</span>, bellow 10%. Do we exclude the signal at 90% CL?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1057,8 +1067,8 @@ g(x \, | \, \mu) = \int g( x \, | \, \mu, \nu) \, \pi(\nu) \, \mathrm{d}\nu
 <p><span class="math notranslate nohighlight">\(H_1\)</span> depends now on <span class="math notranslate nohighlight">\(\mu\)</span>. When <span class="math notranslate nohighlight">\(\mu=0\)</span>, we recuperate the case <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
 <p>We have a continuous set of hypothesis. This is know as <strong>composite hypothesis testing</strong>. How we proceed?</p>
 <p>We can scan along <span class="math notranslate nohighlight">\(\mu\)</span> and repeat the hypothesis test. But this can be <em>computationally expensive.</em></p>
-<p>In some case there are simpler solutions, but first we need to go back to the concept of <strong>Confidence Levels</strong>.</p>
-<p>As we shall see composite hypothesis testing and confidence intervals are in fact the same thing.</p>
+<p>In some case there are simpler solutions, but first we need to go back to the concept of <strong>Confidence Intervals</strong>.</p>
+<p>As we shall see composite hypothesis testing and confidence intervals are in fact connected!</p>
 <p><strong>Exercise</strong> An experiment searches for a new signal expected <span class="math notranslate nohighlight">\(s=1\)</span> according with SM, in a background <span class="math notranslate nohighlight">\(b=0.5\)</span>, but the strength of the signal can be 10 times more. If there is no signal, what is the 90% CL exclusion sensitivity in terms of <span class="math notranslate nohighlight">\(\mu\)</span>?</p>
 </div>
 </div>
